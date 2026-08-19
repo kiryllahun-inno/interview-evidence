@@ -2,9 +2,7 @@
 
 Companion page for an interview-preparation meetup. **Every source, every number — including what we could not verify.**
 
-## 👉 [Read the page](https://YOUR-USERNAME.github.io/YOUR-REPO/)
-
-*(Replace that URL once GitHub Pages is enabled — see setup below.)*
+## 👉 [Read the page](https://kiryllahun-inno.github.io/interview-evidence/)
 
 ---
 
