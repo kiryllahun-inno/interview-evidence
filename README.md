@@ -2,7 +2,7 @@
 
 Companion page for an interview-preparation meetup. **Every source, every number — including what we could not verify.**
 
-## 👉 [Read the page](kiryllahun-inno.github.io/interview-evidence/)
+## 👉 [Read the page](https://kiryllahun-inno.github.io/interview-evidence/)
 
 ---
 
@@ -15,37 +15,35 @@ Companion page for an interview-preparation meetup. **Every source, every number
 
 The page covers:
 
-- **Lie detection** — why the eye-movement rule fails, and what the 52 real televised appeals showed
+- **Lie detection** — why the eye-movement rule fails, what the 52 real televised appeals showed, the *Lie to Me* experiment, and the one cue that actually works
 - **Facial expressions** — the ~19% figure, and the specificity gap nobody reports
 - **Selection validity** — the corrected table, and the 40-year error behind it
 - **Fairness** — the d = −.02 finding across ~121,000 people, and the mechanical reason it happened
 - **Impression management** — base rates, what faking actually costs, and the claim we had to remove
 - **Remote and AI interviews** — including the finding that AI appears *harder* to fake than humans
 - **Anxiety** — the 2.50 vs 2.50 result and what it means for preparation
-- **EU rights** — the AI Act, the dates, and the three things genuinely unresolved
+- **EU rights** — the AI Act, the dates, and the things genuinely unresolved
 - **Poland** — the 4-of-26 question finding, and the folk psychology on the official careers portal
-- **Integrity** — 17 claims we could not verify, and 9 we removed from earlier drafts
+- **The cultural mismatch** — why modesty reads as missing data through a Western scoring rubric, and what the 10-country evidence actually shows
+- **Integrity** — 17 claims we could not verify, and 9 we corrected in our own drafts
+
+Interactive bits: a sticky table of contents, inline charts, expandable evidence cards with verification chips, a try-it-yourself scoring exercise, and a filterable list of all sources.
 
 ## Verification status
 
 Two tiers, marked throughout the page:
 
 - **18 core sources** — read in full, every statistic checked against the source file at page and table level.
-- **18 recent sources (2018–2026)** on faking and AI interviews — located via bibliographic databases, with **most statistics taken from published abstracts** because several publishers blocked full text. Marked `abstract-level` on the page. Real and DOI-checked, but not page-verified.
+- **23 newer sources (2010–2026)** on faking, deception detection, cross-cultural self-presentation and AI interviews — located via bibliographic databases, with **most statistics taken from published abstracts** because several publishers blocked full text. Marked `abstract-level` on the page. Real and DOI-checked, but not page-verified.
 
-**24 of the 36 sources are open access** and linked directly. Paywalled ones get a DOI only — no pirate mirrors.
+**26 of the 41 sources are open access** and linked directly. Paywalled ones get a DOI only — no pirate mirrors.
 
-## Enabling GitHub Pages
+## Hosting
 
-1. Push this folder to a repository.
-2. **Settings → Pages → Source: Deploy from a branch**, pick your branch and `/` (root) or `/docs`, whichever you used.
-3. Wait a minute, then update the link at the top of this file.
-4. Generate a QR code pointing at the published URL.
-
-The page is a single self-contained HTML file, so it works from any static host — or opened straight from disk if you'd rather not publish it.
+The page is a single self-contained HTML file served via GitHub Pages from this repository. It works from any static host — or opened straight from disk.
 
 ## Corrections
 
 If a number here doesn't match its source, that's a bug. Open an issue.
 
-We've already had to correct ourselves nine times while building this — the list is on the page under **"Claims we had in earlier drafts and removed."** That section stays public deliberately.
+We've already had to correct ourselves nine times while building this — the list is on the page under **"What we could not verify — and what we got wrong."** That section stays public deliberately.
