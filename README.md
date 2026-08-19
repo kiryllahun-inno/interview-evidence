@@ -2,7 +2,7 @@
 
 Companion page for an interview-preparation meetup. **Every source, every number — including what we could not verify.**
 
-## 👉 [Read the page](https://kiryllahun-inno.github.io/interview-evidence/)
+## 👉 [Read the page](kiryllahun-inno.github.io/interview-evidence/)
 
 ---
 
