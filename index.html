@@ -78,7 +78,7 @@ kbd{background:var(--surface2);border:1px solid var(--rule);border-radius:6px;pa
 <body>
 
 <header class="hero"><div class="inner">
-<div class="kicker">Meetup companion · every source, every number · включая то, что мы не смогли проверить</div>
+<div class="kicker">Meetup companion · every source, every number · including what we could not verify</div>
 <h1>What the research actually says about job interviews</h1>
 <p>This page is the evidence behind the talk — including the parts that were cut for time, the claims we had to weaken, and the things nobody has measured. If a number on a slide didn't convince you, check it here. Click anything with a <b>▸</b>.</p>
 <div class="stats">
@@ -106,8 +106,6 @@ kbd{background:var(--surface2);border:1px solid var(--rule);border-radius:6px;pa
 <a href="#s9">09 · EU law</a>
 <a href="#s10">10 · Poland</a>
 <a href="#s10b">10B · The cultural mismatch</a>
-<div class="grp">Interactive</div>
-<a href="#quiz">Self-test: 17 questions</a>
 <div class="grp">The receipts</div>
 <a href="#integrity">What we couldn't verify</a>
 <a href="#sources">All 41 sources</a>
@@ -125,7 +123,7 @@ kbd{background:var(--surface2);border:1px solid var(--rule);border-radius:6px;pa
 <span class="chip c-guard">guardrail</span> a limit on what the finding can say
 </p>
 <div class="callout"><b>Verification status.</b> The 18 core sources were read in full; every statistic was checked at page and table level. The 23 newer sources (2010–2026) were verified through publishers' abstracts and bibliographic databases — real numbers, resolving DOIs, but not the same page-level check. They are marked <span class="chip c-cited">abstract-level</span> throughout.</div>
-<div class="tools"><button onclick="toggleAll(true)">▸ Раскрыть всё</button><button onclick="toggleAll(false)">▾ Свернуть всё</button></div>
+<div class="tools"><button onclick="toggleAll(true)">▸ Expand all</button><button onclick="toggleAll(false)">▾ Collapse all</button></div>
 </div></section>
 
 <section class="blk" id="s1"><div class="card">
@@ -229,7 +227,7 @@ kbd{background:var(--surface2);border:1px solid var(--rule);border-radius:6px;pa
 <div class="demoA"><b>A.</b> "Oh, that happens all the time in data work. In my last project the whole reporting process was a mess — numbers didn't match, people complained constantly. I basically took charge, cleaned everything up, aligned the stakeholders, and after that the reports were finally reliable. It really changed how the team worked."</div>
 <div class="demoA"><b>B.</b> "Our weekly sales report broke about once a month because an upstream export changed column order without warning. I owned the fix: I wrote a schema check that validates the export before the load and fails loudly instead of loading garbage. It caught three bad files in the next quarter — the log shows each one — and the report hasn't shipped wrong numbers since. The trade-off was a day of delay whenever validation fails, which the team accepted over silent errors."</div>
 </div>
-<div class="votebar"><button id="vA" onclick="vote('A')">Голосую за A</button><button id="vB" onclick="vote('B')">Голосую за B</button></div>
+<div class="votebar"><button id="vA" onclick="vote('A')">Vote A</button><button id="vB" onclick="vote('B')">Vote B</button></div>
 <div id="scale" class="hid">
 <div class="rubric"><b>The interviewer's scale (a BARS):</b><br>
 <b>0</b> — no relevant example · <b>1</b> — relevant situation, but unclear what the person personally did or what came of it · <b>2</b> — clear personal action and an observable result · <b>3</b> — action and result <b>plus</b> a measurement, a trade-off, or a lesson that survives one more probing question</div>
@@ -478,13 +476,6 @@ kbd{background:var(--surface2);border:1px solid var(--rule);border-radius:6px;pa
 </div></details>
 </div></section>
 
-<section class="blk" id="quiz"><div class="card">
-<h2>🧠 Self-test: the 17 quiz questions</h2>
-<p class="sub">The same hard-mode questions from the meetup. Click an answer — the reveal explains. The score keeps itself.</p>
-<div id="score" class="callout okc" style="display:none"></div>
-<div id="quizbox"></div>
-</div></section>
-
 <section class="blk" id="integrity"><div class="card">
 <h2>What we could not verify — and what we got wrong</h2>
 <p class="sub">Kept deliberately. Better you have the gaps than a clean story.</p>
@@ -520,7 +511,7 @@ kbd{background:var(--surface2);border:1px solid var(--rule);border-radius:6px;pa
 <button data-f="core">Core 18 (page-level)</button>
 <button data-f="new">Newer 23 (abstract-level)</button>
 <button data-f="oa">Open access 26</button>
-<input id="srcq" placeholder="Поиск по автору, году, теме…">
+<input id="srcq" placeholder="Search by author, year, topic…">
 </div>
 <div id="srclist"></div>
 </div></section>
@@ -530,44 +521,6 @@ kbd{background:var(--surface2);border:1px solid var(--rule);border-radius:6px;pa
 </div>
 
 <script>
-/* ---------- quiz ---------- */
-const QUIZ=[
-["🕵️ In the 52 real appeals, how did the 26 liars differ from the honest relatives?",["More upward-right gazes, longer pauses","Fewer words, shorter appeals, more blinking","More face-touching, more averted gaze","No behavioural differences survived coding"],1,"They differed — in everything except what the folklore predicts: fewer words, more hedging, more blinking, 41% shorter."],
-["🎓 Training people in the eye-movement rule made their accuracy…",["Slightly worse, confidence unchanged","Slightly better, confidence unchanged","Unchanged, confidence higher","Better, and significantly so"],0,"16.33 vs 16.59 against the untrained — and from the inside it didn't even feel like failing."],
-["📺 Lie to Me viewers, compared to controls, were…",["Less accurate, more false alarms on honest people","More accurate, fewer false alarms on liars","Equally accurate, more false alarms on honest people","Equally accurate, equally suspicious"],2,"Accuracy didn't move — suspicion did."],
-["🧩 Judges using ALL cues freely in the nine-study detail experiment performed…",["Slightly above chance","Well above chance","At chance","Below chance"],2,"Free intuition = coin flip; the one-cue group (detailedness) beat it."],
-["📏 The current validity pair is…",["Structured .51 · IQ .31","Structured .42 · IQ .51","Structured .31 · IQ .42","Structured .42 · IQ .31"],3,"The .51s are the pre-2022 textbook — that's the number the correction killed."],
-["📈 After the 2022 correction, which estimate went UP?",["Scored biodata","IQ-type tests","Work samples","None — every estimate fell"],0,".35 → .38. A method that only deflated would be its own kind of suspicious."],
-["🔍 Pre- vs post-1996, when the demographic rating gap closed: what did NOT differ?",["The rating-timing habit","The size of the gap","The number of structure components","The share of field studies"],2,"Same amount of structure — the change was scoring each answer as given."],
-["🧠 Interviewer ratings of personality predict job performance, versus self-reports…",["About equally well","About half as well","About twice as well","About four times as well"],2,"Interviewers read people badly — but still twice as well as people report themselves."],
-["🎭 Of the seven tactics in 448 real interviews, insincere flattery ranked…",["First most used","Fifth most used","Seventh most used","Third most used"],3,"Above some of the honest tactics — the modal lie is «I love your company»."],
-["🔁 Most stable tactic across fifteen interviews: honest self-promotion. Second most stable?",["Insincere flattery","Inventing qualifications","Hiding negatives","Defensive explanations"],1,"Fabricators don't wobble. Consistency is not a tell."],
-["📉 In 693 interviews, the correct pairing:",["Honest: inverted U · deceptive: linear negative","Honest: linear positive · deceptive: inverted U","Honest: inverted U · deceptive: linear positive","Honest: linear negative · deceptive: inverted U"],0,"Selling yourself helps until it doesn't; faking trends down the whole way."],
-["😰 The 24 anxiety-performance correlations (307 applicants) were…",["Zero or slightly negative","Consistently negative","Evenly split both ways","Zero or slightly positive"],3,"The predicted negative link wasn't even pointing the right way."],
-["🎥 Across in-person, phone and video, the stress measures showed…",["More anxiety on video only","More strain on phone only","Higher heart rate in person","No differences on any measure"],3,"The video penalty is not a stress effect — the interaction itself is harder."],
-["🏋️ Interview scores were predicted by prior interview count, but NOT by…",["The cognitive-ability test","Field of study","Self-rated preparation","Extraversion score"],0,"Reps beat brains — practice predicted scores, intelligence didn't."],
-["🤖 Same people faked the same async interview, three scoring channels. Inflation, most → least:",["AI → humans → self-report","Self-report → humans → AI","Humans → self-report → AI","Self-report → AI → humans"],1,".62 → .22 → .14 — the machine was hardest to fool."],
-["📄 A five-page vendor document on AI in hiring products. Which word appears in it?",["Face","Emotion","Transcript","Voice"],2,"Fourteen visual and vocal words, zero occurrences — the machine reads text."],
-["⚖️ The EU workplace emotion-inference ban applies only to inference from…",["Any personal data","Biometric data","Video recordings only","Special-category data"],1,"A transcript-only pipeline sits outside the prohibition entirely — exactly what vendors run."]];
-let answered=0,correct=0;
-const qb=document.getElementById('quizbox');
-QUIZ.forEach((q,qi)=>{
-  const d=document.createElement('div');d.className='qq';
-  d.innerHTML='<div class="qt">'+(qi+1)+'. '+q[0]+'</div>'+
-    q[1].map((o,i)=>'<button data-i="'+i+'">'+o+'</button>').join('')+
-    '<div class="reveal">💡 '+q[3]+'</div>';
-  d.querySelectorAll('button').forEach(b=>b.onclick=()=>{
-    if(d.classList.contains('done'))return;
-    d.classList.add('done');answered++;
-    const i=+b.dataset.i;
-    d.querySelectorAll('button')[q[2]].classList.add('right');
-    if(i===q[2]){correct++}else{b.classList.add('wrong')}
-    const s=document.getElementById('score');
-    s.style.display='block';
-    s.innerHTML='<b>Score: '+correct+' of '+answered+'</b>'+(answered===QUIZ.length?(correct>=13?' — 🏆 you listened better than anyone in the room!':correct>=9?' — 💪 solid, top of the leaderboard.':' — 📖 the page above is waiting for you.'):'');
-  });
-  qb.appendChild(d);
-});
 /* ---------- sources ---------- */
 const SRC=[
 ["Sackett, Zhang, Berry & Lievens (2023) — Revisiting the design of selection systems","IOP 16:283–300 · open access CC-BY","https://doi.org/10.1017/iop.2023.24","core oa"],
@@ -624,7 +577,7 @@ function renderSrc(f,q){
     d.innerHTML='<b>'+s[0]+'</b><span class="m">'+s[1]+(s[2]?' · <a href="'+s[2]+'">link</a>':'')+'</span>';
     list.appendChild(d);
   });
-  if(!list.children.length)list.innerHTML='<p class="src">Ничего не нашлось.</p>';
+  if(!list.children.length)list.innerHTML='<p class="src">Nothing found.</p>';
 }
 let curF='all';
 document.querySelectorAll('.srcbar button').forEach(b=>b.onclick=()=>{
