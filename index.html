@@ -1,796 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>What the research actually says about job interviews</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Every source, number and citation behind the interview-preparation meetup — including what we could not verify.">
-
 <style>
-  :root{
-    --bg:#F7F8FA; --surface:#FFFFFF; --surface-2:#F1F3F7;
-    --ink:#171B22; --ink-2:#444C59; --muted:#6B7382;
-    --rule:#DCE0E7; --rule-2:#C3C9D4;
-    --s1:#2E6FB7; --s2:#B07A1E;
-    --ok:#1C6B54; --cited:#96631A; --guard:#A33A2E; --craft:#5B5F6B;
-    --ok-bg:#E7F2ED; --cited-bg:#F7EEDD; --guard-bg:#F8E9E6; --craft-bg:#EDEFF2;
-    --sans:"Segoe UI Variable Display","Segoe UI",system-ui,-apple-system,sans-serif;
-    --serif:Georgia,"Iowan Old Style","Palatino Linotype",serif;
-    --mono:"Cascadia Mono",Consolas,ui-monospace,monospace;
-  }
-  @media (prefers-color-scheme:dark){
-    :root{
-      --bg:#14171C; --surface:#1B1F26; --surface-2:#22272F;
-      --ink:#E8EBF0; --ink-2:#B0B7C3; --muted:#7F8794;
-      --rule:#2A2F38; --rule-2:#3A414C;
-      --s1:#4E8FCE; --s2:#B8862A;
-      --ok:#4FA383; --cited:#C79A4E; --guard:#D97A66; --craft:#9AA0AE;
-      --ok-bg:#17261F; --cited-bg:#2A2213; --guard-bg:#2B1B18; --craft-bg:#22262D;
-    }
-  }
-  :root[data-theme="dark"]{
-    --bg:#14171C; --surface:#1B1F26; --surface-2:#22272F;
-    --ink:#E8EBF0; --ink-2:#B0B7C3; --muted:#7F8794;
-    --rule:#2A2F38; --rule-2:#3A414C;
-    --s1:#4E8FCE; --s2:#B8862A;
-    --ok:#4FA383; --cited:#C79A4E; --guard:#D97A66; --craft:#9AA0AE;
-    --ok-bg:#17261F; --cited-bg:#2A2213; --guard-bg:#2B1B18; --craft-bg:#22262D;
-  }
-  :root[data-theme="light"]{
-    --bg:#F7F8FA; --surface:#FFFFFF; --surface-2:#F1F3F7;
-    --ink:#171B22; --ink-2:#444C59; --muted:#6B7382;
-    --rule:#DCE0E7; --rule-2:#C3C9D4;
-    --s1:#2E6FB7; --s2:#B07A1E;
-    --ok:#1C6B54; --cited:#96631A; --guard:#A33A2E; --craft:#5B5F6B;
-    --ok-bg:#E7F2ED; --cited-bg:#F7EEDD; --guard-bg:#F8E9E6; --craft-bg:#EDEFF2;
-  }
-
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);
-    font-family:var(--serif);font-size:17px;line-height:1.6;
-    -webkit-text-size-adjust:100%}
-  .wrap{max-width:760px;margin:0 auto;padding:0 18px 80px}
-  @media (min-width:700px){ body{font-size:18px} .wrap{padding:0 28px 96px} }
-
-  /* header */
-  header{padding:36px 0 22px;border-bottom:2px solid var(--ink);margin-bottom:26px}
-  .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.14em;
-    text-transform:uppercase;color:var(--muted);margin:0 0 14px}
-  h1{font-family:var(--sans);font-weight:700;letter-spacing:-.025em;
-    font-size:clamp(28px,7vw,44px);line-height:1.06;margin:0 0 12px;text-wrap:balance}
-  .lede{font-family:var(--sans);font-size:clamp(15px,4vw,19px);color:var(--ink-2);
-    margin:0 0 20px;line-height:1.45}
-  .stats{display:flex;flex-wrap:wrap;gap:1px;background:var(--rule);
-    border:1px solid var(--rule);margin:0}
-  .stat{background:var(--surface);padding:10px 14px;flex:1 1 90px}
-  .stat dt{font-family:var(--mono);font-size:10px;letter-spacing:.1em;
-    text-transform:uppercase;color:var(--muted);margin:0 0 2px}
-  .stat dd{font-family:var(--mono);font-size:17px;font-weight:700;margin:0;
-    font-variant-numeric:tabular-nums}
-
-  h2{font-family:var(--sans);font-weight:700;letter-spacing:-.02em;
-    font-size:clamp(22px,5.5vw,30px);line-height:1.15;margin:44px 0 4px;
-    padding-top:16px;border-top:1px solid var(--rule-2);text-wrap:balance}
-  h2 .n{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--muted);
-    display:block;letter-spacing:.1em;margin-bottom:6px;text-transform:uppercase}
-  h3{font-family:var(--sans);font-weight:650;font-size:17px;margin:28px 0 8px;letter-spacing:-.008em}
-  p{margin:0 0 14px}
-  ul,ol{margin:0 0 14px;padding-left:20px}
-  li{margin:0 0 7px}
-  a{color:var(--s1);text-decoration-thickness:1px;text-underline-offset:2px}
-  code{font-family:var(--mono);font-size:.88em;background:var(--surface-2);
-    padding:1px 5px;border-radius:3px;font-variant-numeric:tabular-nums}
-  strong{font-weight:700}
-
-  /* finding blocks */
-  .f{background:var(--surface);border:1px solid var(--rule);border-radius:6px;
-    padding:14px 16px;margin:0 0 12px}
-  .f .num{font-family:var(--mono);font-weight:700;font-variant-numeric:tabular-nums;
-    font-size:clamp(19px,5vw,25px);letter-spacing:-.02em;color:var(--ink);
-    display:block;margin-bottom:5px;line-height:1.1}
-  .f p{font-family:var(--sans);font-size:15px;color:var(--ink-2);margin:0 0 9px;line-height:1.45}
-  .f .src{font-family:var(--mono);font-size:11.5px;color:var(--muted);
-    border-top:1px solid var(--rule);padding-top:8px;margin:0;line-height:1.5}
-  .f .src a{color:var(--muted)}
-
-  /* chips */
-  .chip{font-family:var(--mono);font-size:10px;letter-spacing:.06em;
-    text-transform:uppercase;font-weight:700;padding:2px 7px;border-radius:3px;
-    display:inline-block;white-space:nowrap;margin:2px 3px 2px 0}
-  .c-ok{color:var(--ok);background:var(--ok-bg)}
-  .c-cited{color:var(--cited);background:var(--cited-bg)}
-  .c-guard{color:var(--guard);background:var(--guard-bg)}
-  .c-craft{color:var(--craft);background:var(--craft-bg)}
-
-  /* callouts */
-  .box{border-left:3px solid var(--s1);background:var(--surface);
-    padding:13px 15px;margin:0 0 16px;font-family:var(--sans);font-size:15px;line-height:1.5}
-  .box.warn{border-left-color:var(--guard);background:var(--guard-bg)}
-  .box.note{border-left-color:var(--craft);background:var(--craft-bg)}
-  .box .lbl{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;
-    text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:5px}
-  .box.warn .lbl{color:var(--guard)}
-  .box p{margin:0 0 8px;font-family:var(--sans);font-size:15px}
-  .box p:last-child{margin:0}
-
-  /* details */
-  details{background:var(--surface);border:1px solid var(--rule);border-radius:6px;
-    margin:0 0 10px;overflow:hidden}
-  summary{font-family:var(--sans);font-weight:650;font-size:15.5px;padding:13px 16px;
-    cursor:pointer;list-style:none;display:flex;justify-content:space-between;
-    gap:10px;align-items:baseline;line-height:1.35}
-  summary::-webkit-details-marker{display:none}
-  summary::after{content:"+";font-family:var(--mono);font-weight:700;
-    color:var(--muted);flex:0 0 auto;font-size:17px}
-  details[open] summary::after{content:"–"}
-  details[open] summary{border-bottom:1px solid var(--rule)}
-  .body{padding:14px 16px 4px}
-  .body > *:last-child{margin-bottom:12px}
-
-  /* source list */
-  .srcitem{border-bottom:1px solid var(--rule);padding:12px 0}
-  .srcitem:last-child{border-bottom:none}
-  .srcitem .t{font-family:var(--sans);font-weight:650;font-size:15px;display:block;margin-bottom:3px;line-height:1.35}
-  .srcitem .m{font-family:var(--mono);font-size:11.5px;color:var(--muted);line-height:1.55}
-
-  table{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:14px}
-  .tw{overflow-x:auto;margin:0 0 16px;border:1px solid var(--rule);border-radius:6px;background:var(--surface)}
-  th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
-  th{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--muted);background:var(--surface-2);white-space:nowrap}
-  tbody tr:last-child td{border-bottom:none}
-  td.n{font-family:var(--mono);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
-
-  footer{border-top:2px solid var(--ink);margin-top:44px;padding-top:18px;
-    font-family:var(--mono);font-size:11.5px;color:var(--muted);line-height:1.75}
+:root{--bg:#F7F8FA;--surface:#fff;--surface2:#F1F3F7;--ink:#171B22;--ink2:#444C59;--muted:#6B7382;
+--rule:#DCE0E7;--s1:#2E6FB7;--s2:#B07A1E;--ok:#1C6B54;--cited:#96631A;--guard:#A33A2E;--craft:#5B5F6B;
+--okbg:#E7F2ED;--citedbg:#F7EEDD;--guardbg:#F8E9E6;--craftbg:#EDEFF2;
+--shadow:0 1px 2px rgba(23,27,34,.05),0 4px 16px rgba(23,27,34,.06)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 -apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+a{color:var(--s1)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:220px 1fr;gap:36px}
+@media(max-width:900px){.wrap{grid-template-columns:1fr}nav.toc{display:none}}
+header.hero{background:linear-gradient(180deg,#1C2333,#232C42);color:#fff;padding:56px 20px 40px}
+header.hero .inner{max-width:1200px;margin:0 auto}
+.kicker{font-size:12px;letter-spacing:.14em;color:#9FB4DC;font-weight:700;text-transform:uppercase}
+header.hero h1{font-size:clamp(28px,4.5vw,44px);line-height:1.12;margin:10px 0 14px;max-width:840px}
+header.hero p{max-width:760px;color:#C9D2E4;margin:0 0 26px}
+.stats{display:flex;gap:14px;flex-wrap:wrap}
+.stat{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:12px 20px;min-width:120px}
+.stat dd{margin:0;font-size:30px;font-weight:800}.stat dt{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#9FB4DC}
+nav.toc{position:sticky;top:16px;align-self:start;max-height:calc(100vh - 32px);overflow:auto;padding:16px 0}
+nav.toc a{display:block;padding:6px 12px;border-left:3px solid transparent;color:var(--ink2);text-decoration:none;font-size:13.5px;border-radius:0 8px 8px 0}
+nav.toc a:hover{background:var(--surface2)}
+nav.toc a.on{border-left-color:var(--s1);color:var(--s1);font-weight:700;background:#EDF3FB}
+nav.toc .grp{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:14px 12px 4px}
+main{min-width:0;padding:32px 0 80px}
+section.blk{margin:0 0 30px;scroll-margin-top:20px}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:16px;box-shadow:var(--shadow);padding:26px 30px;margin-bottom:16px}
+h2{font-size:24px;margin:0 0 4px}
+h2 .no{color:var(--s1);font-weight:800;margin-right:10px}
+.sub{color:var(--muted);margin:0 0 18px;font-size:14.5px}
+h3{font-size:17px;margin:22px 0 8px}
+details{border:1px solid var(--rule);border-radius:12px;margin:10px 0;background:var(--surface)}
+details summary{cursor:pointer;padding:13px 18px;font-weight:650;list-style:none;display:flex;gap:10px;align-items:baseline}
+details summary::before{content:"▸";color:var(--s1);transition:transform .15s;flex:none}
+details[open] summary::before{transform:rotate(90deg)}
+details .body{padding:2px 20px 16px;border-top:1px solid var(--rule)}
+.chip{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;border-radius:99px;padding:2px 10px;vertical-align:middle}
+.c-ok{background:var(--okbg);color:var(--ok)}.c-cited{background:var(--citedbg);color:var(--cited)}
+.c-guard{background:var(--guardbg);color:var(--guard)}.c-craft{background:var(--craftbg);color:var(--craft)}
+.src{font-size:12.5px;color:var(--muted);margin:10px 0 2px}
+.callout{border-left:4px solid var(--guard);background:var(--guardbg);border-radius:0 10px 10px 0;padding:12px 16px;margin:14px 0;font-size:14.5px}
+.callout.okc{border-left-color:var(--ok);background:var(--okbg)}
+.chart{margin:16px 0;overflow-x:auto}
+svg text{font:12.5px -apple-system,"Segoe UI",Roboto,sans-serif;fill:var(--ink2)}
+svg .v{font-weight:800;fill:var(--ink)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:760px){.grid2{grid-template-columns:1fr}}
+.qq{border:1px solid var(--rule);border-radius:14px;padding:16px 20px;margin:12px 0;background:var(--surface)}
+.qq .qt{font-weight:700;margin-bottom:10px}
+.qq button{display:block;width:100%;text-align:left;margin:6px 0;padding:9px 14px;border:1px solid var(--rule);border-radius:10px;background:var(--surface2);cursor:pointer;font:14.5px inherit;color:var(--ink)}
+.qq button:hover{border-color:var(--s1)}
+.qq button.right{background:var(--okbg);border-color:var(--ok);font-weight:700}
+.qq button.wrong{background:var(--guardbg);border-color:var(--guard)}
+.qq .reveal{display:none;margin-top:10px;font-size:14px;color:var(--ink2);border-top:1px dashed var(--rule);padding-top:10px}
+.qq.done .reveal{display:block}
+.srcbar{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.srcbar button{border:1px solid var(--rule);background:var(--surface);border-radius:99px;padding:5px 14px;font-size:13px;cursor:pointer;color:var(--ink)}
+.srcbar button.on{background:var(--s1);color:#fff;border-color:var(--s1)}
+.srcbar input{flex:1;min-width:180px;border:1px solid var(--rule);border-radius:10px;padding:6px 12px;font:14px inherit}
+.srcitem{padding:11px 4px;border-bottom:1px solid var(--rule);font-size:14.5px}
+.srcitem .m{display:block;font-size:12.5px;color:var(--muted)}
+.demoA{border:2px solid var(--rule);border-radius:14px;padding:16px 20px;font-style:italic;background:#FDFBF7}
+.votebar{display:flex;gap:10px;margin:12px 0}
+.votebar button{flex:1;padding:10px;border-radius:10px;border:1px solid var(--rule);background:var(--surface2);font:15px inherit;font-weight:700;cursor:pointer;color:var(--ink)}
+.votebar button.sel{background:#EDF3FB;border-color:var(--s1);color:var(--s1)}
+.hid{display:none}
+.rubric{border-left:4px solid var(--s1);padding:4px 16px;background:#EDF3FB;border-radius:0 10px 10px 0;margin:12px 0}
+.foot{color:var(--muted);font-size:13px;text-align:center;padding:30px 20px;border-top:1px solid var(--rule)}
+.tools{display:flex;gap:10px;margin:0 0 8px}
+.tools button{border:1px solid var(--rule);background:var(--surface);border-radius:8px;padding:5px 12px;font-size:12.5px;cursor:pointer;color:var(--ink2)}
+kbd{background:var(--surface2);border:1px solid var(--rule);border-radius:6px;padding:1px 7px;font-size:12.5px}
 </style>
+</head>
+<body>
+
+<header class="hero"><div class="inner">
+<div class="kicker">Meetup companion · every source, every number · включая то, что мы не смогли проверить</div>
+<h1>What the research actually says about job interviews</h1>
+<p>This page is the evidence behind the talk — including the parts that were cut for time, the claims we had to weaken, and the things nobody has measured. If a number on a slide didn't convince you, check it here. Click anything with a <b>▸</b>.</p>
+<div class="stats">
+<div class="stat"><dd>41</dd><dt>Sources</dt></div>
+<div class="stat"><dd>26</dd><dt>Open access</dt></div>
+<div class="stat"><dd>207</dd><dt>Findings coded</dt></div>
+<div class="stat"><dd>17</dd><dt>Marked unverifiable</dt></div>
+<div class="stat"><dd>9</dd><dt>Own claims corrected</dt></div>
+</div>
+</div></header>
 
 <div class="wrap">
+<nav class="toc" id="toc">
+<div class="grp">Start</div>
+<a href="#how">How to read this page</a>
+<div class="grp">The talk, with receipts</div>
+<a href="#s1">01 · Lie detection myths</a>
+<a href="#s2">02 · What predicts performance</a>
+<a href="#s3">03 · Score two answers (try it)</a>
+<a href="#s4">04 · The instrument's blind spot</a>
+<a href="#s5">05 · Faking, honestly measured</a>
+<a href="#s6">06 · Stories that survive probing</a>
+<a href="#s7">07 · Anxiety</a>
+<a href="#s8">08 · Video &amp; the machine</a>
+<a href="#s9">09 · EU law</a>
+<a href="#s10">10 · Poland</a>
+<a href="#s10b">10B · The cultural mismatch</a>
+<div class="grp">Interactive</div>
+<a href="#quiz">Self-test: 17 questions</a>
+<div class="grp">The receipts</div>
+<a href="#integrity">What we couldn't verify</a>
+<a href="#sources">All 41 sources</a>
+</nav>
 
-<header>
-  <p class="kicker">Meetup companion · every source, every number</p>
-  <h1>What the research actually says about job interviews</h1>
-  <p class="lede">This page is the evidence behind the talk — including the parts that were cut for time, the claims we had to weaken, and the things nobody has measured. If a number on a slide didn't convince you, check it here.</p>
-  <dl class="stats">
-    <div class="stat"><dt>Sources</dt><dd>36</dd></div>
-    <div class="stat"><dt>Open access</dt><dd>24</dd></div>
-    <div class="stat"><dt>Findings</dt><dd>207</dd></div>
-    <div class="stat"><dt>Unverifiable</dt><dd>17</dd></div>
-  </dl>
-</header>
+<main>
 
-<h2><span class="n">Start here</span>How to read this page</h2>
+<section class="blk" id="how"><div class="card">
+<h2>How to read this page</h2>
+<p>Every claim carries a label saying how much weight it can bear. A lot of interview advice fails not because it is invented but because a modest finding gets repeated until it sounds like a law.</p>
+<p>
+<span class="chip c-ok">verified</span> read directly from the source — the table, the page, the printed number &nbsp;·&nbsp;
+<span class="chip c-cited">abstract-level</span> confirmed from the publisher's abstract; full text not page-checked &nbsp;·&nbsp;
+<span class="chip c-craft">inference</span> a reasonable step beyond what the study tested — ours, not theirs &nbsp;·&nbsp;
+<span class="chip c-guard">guardrail</span> a limit on what the finding can say
+</p>
+<div class="callout"><b>Verification status.</b> The 18 core sources were read in full; every statistic was checked at page and table level. The 23 newer sources (2010–2026) were verified through publishers' abstracts and bibliographic databases — real numbers, resolving DOIs, but not the same page-level check. They are marked <span class="chip c-cited">abstract-level</span> throughout.</div>
+<div class="tools"><button onclick="toggleAll(true)">▸ Раскрыть всё</button><button onclick="toggleAll(false)">▾ Свернуть всё</button></div>
+</div></section>
 
-<p>Every claim below carries a label saying how much weight it can bear. This matters more than it sounds: a lot of interview advice fails not because it is invented but because a modest finding gets repeated until it sounds like a law.</p>
+<section class="blk" id="s1"><div class="card">
+<h2><span class="no">01</span>Can anyone tell when you're lying?</h2>
+<p class="sub">The eye-movement rule · faces as emotion readouts · Lie to Me · what actually works</p>
 
-<p><span class="chip c-ok">verified</span> Read directly from the source: the table, the page, the printed number. Most of this page.</p>
-<p><span class="chip c-cited">cited only</span> A figure quoted <em>inside</em> one of our sources, where we could not obtain the original study. Real, but second-hand.</p>
-<p><span class="chip c-craft">inference</span> A reasonable step beyond what the study tested. Ours, not theirs.</p>
-<p><span class="chip c-guard">guardrail</span> A limit on what the finding can be used to say.</p>
+<div class="chart"><svg viewBox="0 0 720 130" role="img" aria-label="Up-right gazes per second">
+<text x="0" y="16" class="v">Up-right gazes per second, lying vs truth (32 people, blind coders, sound off)</text>
+<text x="0" y="48">lying</text><rect x="90" y="36" width="513" height="16" rx="3" fill="var(--s1)"/><text x="612" y="49" class="v">0.019</text>
+<text x="0" y="78">truth</text><rect x="90" y="66" width="459" height="16" rx="3" fill="var(--s2)"/><text x="558" y="79" class="v">0.017</text>
+<text x="0" y="112" fill="var(--muted)">Not a small difference — no difference (p = .73).</text>
+</svg></div>
 
-<div class="box warn">
-  <span class="lbl">Verification status — please read before quoting anything</span>
-  <p>The <strong>18 core sources</strong> were read in full and every statistic was checked against the source file, at page and table level.</p>
-  <p>The <strong>18 newer sources (2018–2026)</strong> on faking and AI interviews were located through bibliographic databases, and <strong>most of their statistics come from published abstracts rather than full text</strong> — several publishers blocked the article bodies. The numbers are real and the DOIs resolve, but they have not had the same page-level check. They are marked <span class="chip c-cited">abstract-level</span> throughout.</p>
-  <p>If you are going to rely on one of those figures for something that matters, read the paper.</p>
+<details><summary>The rule was tested three ways in 2012 — and failed all three <span class="chip c-ok">verified</span></summary><div class="body">
+<p><b>Study 1:</b> 32 people filmed lying and telling the truth; two blind coders scored every eye movement with sound off. Lying: 0.019 up-right gazes/sec. Truth: 0.017.</p>
+<p><b>Study 2:</b> 21 people trained in the rule vs 29 untrained judged 32 clips (16 lies; coin flip = 16 correct). Untrained 16.59, trained <b>16.33 — slightly worse</b>. Confidence didn't move either: 4.65 vs 4.58 out of 7.</p>
+<p><b>Study 3:</b> 52 real televised appeals for missing relatives; in 26 cases the pleader was later proven to be the killer (murder weapon, security footage, leading police to the body). Across all 52: <i>"There were no instances of UR gazes or UL gazes"</i> (p.4). The behaviour the rule is built on does not occur.</p>
+<p class="src"><span class="chip c-ok">verified</span> Wiseman et al. 2012, <i>PLoS ONE</i> 7(7), Tables 1–2, pp.1–4 · <a href="https://doi.org/10.1371/journal.pone.0040259">doi, open access</a></p>
+</div></details>
+
+<details><summary>Where "90% accuracy" was born: a 1987 police magazine <span class="chip c-ok">verified</span></summary><div class="body">
+<p>The figure that sold the technique traces to Rhoads &amp; Solomon (1987) in <i>The Police Chief</i> — a police magazine, not a journal. It mentions four experiments allegedly demonstrating 90%. No reference is given. Nobody ever found them, and no deception study since has come near 90%.</p>
+<p class="src"><span class="chip c-ok">verified</span> cited and dismantled in Wiseman et al. 2012, p.1</p>
+</div></details>
+
+<details><summary>The liars DID differ — just not how folklore predicts <span class="chip c-guard">guardrail</span></summary><div class="body">
+<p>In the same 52 appeals, liars used fewer words, hedged more ("if", "perhaps", "maybe"), blinked more, and their appeals were 41% shorter (10.89 vs 18.37 s, p = .04).</p>
+<div class="callout">Group averages in one body of footage. Never validated for judging one individual. Nobody should leave this page counting anyone's blinks.</div>
+<p class="src"><span class="chip c-ok">verified</span> Wiseman et al. 2012, p.4, citing ten Brinke &amp; Porter's archive (their own paper is not in our library)</p>
+</div></details>
+
+<details><summary>Faces barely carry emotions: the expected face shows up in ~19% of episodes <span class="chip c-ok">verified</span></summary><div class="body">
+<p>Five researchers from five fields reviewed the whole literature: 89 effect sizes, 47 studies, 3,599 people. When a person actually feels an emotion, the "expected" face (anger → scowl) appears in roughly <b>19%</b> of episodes (range .15–.25). The reverse question — how often the face appears when the emotion <i>isn't</i> there — is marked <b>unknown</b> for every study in the summary table.</p>
+<p>Four days of in-home videography: angry children raised their voices in <b>42%</b> of anger episodes, whined in 21%, scowled in <b>16.2%</b>. Anger is audible, not visible.</p>
+<p class="src"><span class="chip c-ok">verified</span> Barrett, Adolphs, Marsella, Martinez &amp; Pollak 2019, <i>PSPI</i> 20(1) · <a href="https://doi.org/10.1177/1529100619832930">doi</a></p>
+</div></details>
+
+<details><summary>Watching Lie to Me made viewers worse, not better <span class="chip c-cited">abstract-level</span></summary><div class="body">
+<p>Viewers of the show were <b>no more accurate</b> than controls at judging real honest and deceptive interviews — but <b>more likely to misidentify honest people as liars</b>. The show taught suspicion, not detection.</p>
+<p class="src"><span class="chip c-cited">abstract-level</span> Levine, Serota &amp; Shulman 2010, <i>Communication Research</i> 37(6) · <a href="https://doi.org/10.1177/0093650210362686">doi</a></p>
+</div></details>
+
+<details><summary>What actually works: one cue — detail <span class="chip c-cited">abstract-level</span></summary><div class="body">
+<p>A 2023 review: humans are barely able to pick up lies from nonverbal cues at all; systematic <b>verbal-content</b> methods do meaningfully better (all still below courtroom certainty).</p>
+<p>Nine studies in <i>Nature Human Behaviour</i>: judging freely on any cue = <b>chance</b>. Judging on one cue — <b>how detailed the account is</b> — consistently separated lies from truths. Ignoring more information made people better.</p>
+<div class="callout okc">Detail is the through-line of the whole talk: best deception cue, top of the scoring scale, the thing anxiety erodes — and the thing you can train.</div>
+<p class="src"><span class="chip c-cited">abstract-level</span> Brennen &amp; Magnussen 2023, <i>CDPS</i> 32(5) · <a href="https://doi.org/10.1177/09637214231173095">doi, CC-BY</a> · Verschuere et al. 2023, <i>Nat. Hum. Behav.</i> 7:718–728 · <a href="https://doi.org/10.1038/s41562-023-01556-2">doi</a></p>
+</div></details>
+</div></section>
+
+<section class="blk" id="s2"><div class="card">
+<h2><span class="no">02</span>What actually predicts job performance</h2>
+<p class="sub">The validity ladder · why the textbook was rewritten in 2022 · what "structured" means</p>
+
+<div class="chart"><svg viewBox="0 0 720 240" role="img" aria-label="Validity ladder">
+<text x="0" y="16" class="v">Correlation with job performance (Sackett et al. 2023, Table 1)</text>
+<text x="0" y="47">Structured interview</text><rect x="185" y="35" width="420" height="15" rx="3" fill="var(--s1)"/><text x="613" y="48" class="v">.42</text>
+<text x="0" y="77">Job knowledge test</text><rect x="185" y="65" width="400" height="15" rx="3" fill="var(--s1)" opacity=".75"/><text x="593" y="78" class="v">.40</text>
+<text x="0" y="107">Biodata</text><rect x="185" y="95" width="380" height="15" rx="3" fill="var(--s1)" opacity=".6"/><text x="573" y="108" class="v">.38</text>
+<text x="0" y="137">Work sample</text><rect x="185" y="125" width="330" height="15" rx="3" fill="var(--s1)" opacity=".5"/><text x="523" y="138" class="v">.33</text>
+<text x="0" y="167">IQ-type test (GMA)</text><rect x="185" y="155" width="310" height="15" rx="3" fill="var(--s1)" opacity=".4"/><text x="503" y="168" class="v">.31</text>
+<text x="0" y="197">Unstructured interview</text><rect x="185" y="185" width="190" height="15" rx="3" fill="var(--s2)"/><text x="383" y="198" class="v">.19</text>
+<text x="0" y="228" fill="var(--muted)">The interview sits at both the top and the bottom. The gap is structure.</text>
+</svg></div>
+
+<details><summary>What r = .42 is — and is not <span class="chip c-ok">verified</span></summary><div class="body">
+<p>The experiment behind every number here: interview candidates get scores; months later their job performance is rated (almost always by supervisors); each person is two numbers; the correlation r (−1…+1) says how well one predicts the other; meta-analysis pools this across thousands of people.</p>
+<p><b>.42 is not "42% accuracy" and not "42% of hires succeed."</b> It is a correlation — and .42 vs .19 is the difference between a filter and a ritual.</p>
+</div></details>
+
+<details><summary>2022: the field discovers it had been over-correcting for 40 years <span class="chip c-ok">verified</span></summary><div class="body">
+<p>You can only correlate for the hired — a pre-filtered, narrow group, which shrinks correlations. The field corrected for that legitimately, but the correction's size can only be measured in rare <i>predictive</i> studies, while <b>~80% of studies are concurrent</b> (current employees, hired years ago, barely restricted). A large correction measured on the 20% was applied to the 80%. The authors: the formulas were <i>"systematically applied in ways which are not appropriate."</i></p>
+<p>Result: IQ .51→.31, work samples .54→.33 — but biodata went <b>up</b>, .35→.38 (so it wasn't a demolition). A <i>JAP</i> reviewer opened with <i>"Why didn't you publish this 40 years ago and save the field a lot of trouble?"</i> Practitioners reported <b>relief</b>: their local numbers had never matched the textbook.</p>
+<p class="src"><span class="chip c-ok">verified</span> Sackett, Zhang, Berry &amp; Lievens 2023, <i>IOP</i> 16:283–300, pp.285–292 · <a href="https://doi.org/10.1017/iop.2023.24">doi, CC-BY</a></p>
+</div></details>
+
+<details><summary>Valid AND fair — the combination once thought impossible <span class="chip c-ok">verified</span></summary><div class="body">
+<p>Average Black–White score gap: IQ-type test <b>d = .79</b> (largest in the table); structured interview <b>.23</b>; unstructured .32. The most valid common method is also among the fairest.</p>
+<p class="src"><span class="chip c-ok">verified</span> Sackett et al. 2023, Table 1</p>
+</div></details>
+
+<details><summary>The five components you can feel from the chair <span class="chip c-ok">verified</span></summary><div class="body">
+<p>Same questions for everyone · a written anchored scale (this one component alone: validity .26 → <b>.35</b>) · each answer scored as given · limited probing · trained interviewers. Twelve meta-analyses have compared structured vs unstructured; all twelve favour structured.</p>
+<p>And a 2023 experiment: under "act like an applicant" instructions, scores inflated <b>more on traditional questions than structured ones</b> — structure predicts better <i>and</i> is harder to game.</p>
+<p class="src"><span class="chip c-ok">verified</span> Levashina, Hartwell, Morgeson &amp; Campion 2014, <i>Personnel Psychology</i> 67, pp.242–274 · <a href="https://doi.org/10.1111/peps.12052">doi</a> · <span class="chip c-cited">abstract-level</span> Bill, Melchers, Steuer &amp; Eisele 2023 · <a href="https://doi.org/10.1111/apps.12514">doi</a></p>
+</div></details>
+
+<details><summary>The honest spread: ".42, plus or minus .24" <span class="chip c-guard">guardrail</span></summary><div class="body">
+<p>SD = .19; printed lower bound of the 80% interval = .18 — the authors' own phrasing: validity <i>"should really be viewed as '.42, plus or minus .24'."</i> The unstructured interview's lower bound is <b>−.01</b>: its worst tenth predicts nothing.</p>
+<p>And the field runs on the wrong end: across 104 interviews in the research literature itself, the average used <b>5.74 of 18</b> structure components; 4% barred discussing candidates between interviews; 19% took detailed notes; face-to-face interviews were <i>more</i> structured than video ones (6.50 vs 4.28) — the opposite of the same paper's prediction.</p>
+<div class="callout okc">You can't control whether the interviewer brings a scale. You control whether your answers are scorable.</div>
+<p class="src"><span class="chip c-ok">verified</span> Sackett p.292 · Levashina Table 2, pp.247–248</p>
+</div></details>
+</div></section>
+
+<section class="blk" id="s3"><div class="card">
+<h2><span class="no">03</span>Score two answers — try it yourself</h2>
+<p class="sub">The live exercise from the talk. Vote first, then open the scale.</p>
+<p><b>Question: "Tell me about a time you fixed a broken process."</b></p>
+<div class="grid2">
+<div class="demoA"><b>A.</b> "Oh, that happens all the time in data work. In my last project the whole reporting process was a mess — numbers didn't match, people complained constantly. I basically took charge, cleaned everything up, aligned the stakeholders, and after that the reports were finally reliable. It really changed how the team worked."</div>
+<div class="demoA"><b>B.</b> "Our weekly sales report broke about once a month because an upstream export changed column order without warning. I owned the fix: I wrote a schema check that validates the export before the load and fails loudly instead of loading garbage. It caught three bad files in the next quarter — the log shows each one — and the report hasn't shipped wrong numbers since. The trade-off was a day of delay whenever validation fails, which the team accepted over silent errors."</div>
 </div>
-
-<h2><span class="n">Section 1</span>Can anyone tell when you're lying?</h2>
-
-<p>No. And the specific technique most people believe in has been tested and failed three times in one paper.</p>
-
-<div class="f">
-  <span class="num">16.33 vs 16.59</span>
-  <p>Correct lie-detection judgements out of 32, for people <strong>trained</strong> in the "liars look up and to the right" rule versus <strong>untrained</strong> controls. Chance is 16. The trained group did nominally worse. Training also did not increase their confidence (4.65 vs 4.58 on a 7-point scale) — so the rule doesn't work, and it doesn't feel like it fails.</p>
-  <p class="src"><span class="chip c-ok">verified</span> Wiseman et al. 2012, <em>PLoS ONE</em> 7(7):e40259, Study 2, Table 2, p.4 · <a href="https://doi.org/10.1371/journal.pone.0040259">open access</a></p>
+<div class="votebar"><button id="vA" onclick="vote('A')">Голосую за A</button><button id="vB" onclick="vote('B')">Голосую за B</button></div>
+<div id="scale" class="hid">
+<div class="rubric"><b>The interviewer's scale (a BARS):</b><br>
+<b>0</b> — no relevant example · <b>1</b> — relevant situation, but unclear what the person personally did or what came of it · <b>2</b> — clear personal action and an observable result · <b>3</b> — action and result <b>plus</b> a measurement, a trade-off, or a lesson that survives one more probing question</div>
+<p><b>A scores a 1.</b> Which process? "Reporting." What exactly failed? Not stated. What did <i>you</i> do? "Basically took charge" — a summary of an action, not an action. Not because the person is bad at their job — there is nothing in the answer to evaluate.</p>
+<p><b>B scores a 3.</b> Named failure mode, personal action, a result with an artifact (three catches, in the log) — and the candidate names the cost themselves: a day of delay. Almost nobody does that.</p>
+<div class="callout okc">Before the scale, fluency wins. After the scale, evidence wins. The scale doesn't make anyone smarter — it forces everyone to evaluate the same thing. Write answers as if the sheet exists: an answer earning a 3 on an invisible rubric also survives an interviewer running on feel. The reverse is not true.</div>
+<p class="src"><span class="chip c-craft">teaching props</span> both answers written for the talk · scale mechanics: <span class="chip c-ok">verified</span> anchored scales .26→.35 (Taylor &amp; Small 2002), every-point anchoring beats endpoints (Reilly 2006), BARS makes naive raters match experts (Maurer 2002) — all collected in Levashina 2014 pp.273–274</p>
 </div>
-
-<div class="f">
-  <span class="num">Zero</span>
-  <p>Instances of sustained upward eye movement, in either direction, across <strong>52 real televised appeals</strong> for missing relatives — 26 of them by people later proven to have been lying. Not "no difference between liars and truth-tellers": the behaviour the technique is built on did not occur at all. Ground truth was established by evidence such as possession of the murder weapon, security footage, or the person leading police to the body.</p>
-  <p class="src"><span class="chip c-ok">verified</span> Wiseman et al. 2012, Study 3, pp.4–5 · <a href="https://doi.org/10.1371/journal.pone.0040259">open access</a></p>
-</div>
-
-<details>
-  <summary>Where the "90% accuracy" claim comes from</summary>
-  <div class="body">
-    <p>A 1987 article in a police magazine referred to four experiments demonstrating 90% accuracy and <strong>gave no reference for any of them</strong>. Nobody has located them since, and no deception-detection study has ever reached that accuracy. The paper's authors note that promoting decisions on this basis "would seem irresponsible."</p>
-    <p>The claim is also a <em>mutation</em>. The originators of neuro-linguistic programming did not treat "constructed" mental imagery as lying; that reading came later.</p>
-    <p class="src"><span class="chip c-ok">verified</span> Wiseman et al. 2012, Introduction p.1 and General Discussion p.5</p>
-  </div>
-</details>
-
-<details>
-  <summary>The cues that <em>did</em> differ — and why you still shouldn't use them</summary>
-  <div class="body">
-    <p>In the same 52 videos, liars used <strong>fewer words</strong>, more tentative language ("if", "perhaps", "maybe"), <strong>blinked more</strong>, and their appeals were about <strong>41% shorter</strong> (10.9 seconds versus 18.4).</p>
-    <p><span class="chip c-guard">guardrail</span> These are group-level averages across one body of footage. They were never validated as rules for judging an individual, and using them that way is how the nose-touching myth started. The defensible takeaway points the other way: in your own answers, cut the hedging and commit to concrete detail.</p>
-    <p class="src"><span class="chip c-cited">cited within Wiseman et al.</span> Original coding: ten Brinke &amp; Porter</p>
-  </div>
-</details>
-
-<h3>The bigger claim: can faces be read at all?</h3>
-
-<div class="f">
-  <span class="num">≈19%</span>
-  <p>How often the expected facial configuration actually appeared when someone was experiencing the relevant emotion — across 47 studies and 3,599 participants. The mean correlation was <code>r = .32</code>. And these are an <em>upper</em> bound: matching whole facial ensembles rather than partial configurations produced lower values still.</p>
-  <p class="src"><span class="chip c-ok">verified</span> Barrett, Adolphs, Marsella, Martinez &amp; Pollak 2019, <em>Psychological Science in the Public Interest</em> 20(1) · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6640856/">free to read</a> <span class="chip c-guard">an aggregate — not "a scowl means anger 19% of the time"</span></p>
-</div>
-
-<div class="f">
-  <span class="num">Unknown</span>
-  <p>What the review's own summary table reports for <strong>specificity</strong> in every single production study — that is, how often the "angry face" appears when the person <em>isn't</em> angry. Not tested and failed: <strong>never reported</strong>, because studies don't publish false-positive rates. So we don't know what a scowl rules out.</p>
-  <p class="src"><span class="chip c-ok">verified</span> Barrett et al. 2019, Table 4</p>
-</div>
-
-<details>
-  <summary>More from the same review — the vivid findings</summary>
-  <div class="body">
-    <p><strong>Angry children are audible, not visible.</strong> Four days of in-home videography: children raised their voices in <strong>42%</strong> of anger situations, whined in <strong>21%</strong>, and scowled in <strong>16.2%</strong>.</p>
-    <p><strong>Winning doesn't make you smile — an audience does.</strong> Only 8 of 55 winning judo fighters produced a genuine (Duchenne) smile in one study, and all 8 occurred during social interaction; 25 of 119 in a second study. Olympic medallists smiled facing the crowd, not facing the flag.</p>
-    <p><strong>Infants make the "surprise" face for mechanical reasons.</strong> Opening the mouth necessarily raises the eyebrows — and they don't reliably make it when actually surprised. Arm-restrained one-year-olds produced the proposed <em>anger</em> configuration 24% of the time, while 54% produced the <em>surprise</em> configuration.</p>
-    <p><strong>Congenitally blind people undercut the innateness argument.</strong> Their spontaneous facial movements resemble sighted people's — both non-diagnostic. But they <em>pose</em> the stereotyped expressions <em>less</em> reliably. Learning to perform the expressions appears to depend on vision.</p>
-    <p><strong>The multiple-choice format manufactures universality.</strong> The method used to demonstrate universal expressions produces the same result for invented emotion categories with made-up cues, via a process of elimination.</p>
-    <p><strong>Every pre-2008 universality claim rested on three papers</strong> — two of them peer-reviewed — reporting four samples.</p>
-    <p><strong>Mining 7 million images found 17 distinct facial configurations for "happiness"</strong>, five for anger, one for disgust — and none matched the configurations Darwin or prior research proposed.</p>
-    <p><span class="chip c-guard">be fair to the other side</span> The paper states it is not a referendum on any researcher's view, criticises its own authors' earlier work, and quotes opposing researchers agreeing there is no one-to-one correspondence between facial movements and emotions. The dispute is about how much variation exists and why — not whether it exists.</p>
-    <p class="src"><span class="chip c-ok">verified</span> Barrett et al. 2019, throughout</p>
-  </div>
-</details>
-
-<div class="box note">
-  <span class="lbl">An honest limit on how we used this</span>
-  <p>This review <strong>never mentions hiring</strong>. Zero occurrences of hiring, recruitment, employment or applicant; the domains it names are law, national security, psychiatric diagnosis, autism, education and commercial products. Extending it to interviews is <em>our</em> argument, not theirs. The authors' own carve-out is precise: they object to inferring an <em>internal emotional state</em>, not to detecting movement for purposes like pain or drowsiness detection.</p>
-</div>
-
-<details>
-  <summary>Watching people who "read faces" — and what actually works</summary>
-  <div class="body">
-    <p>The TV show that taught a generation to read microexpressions has itself been tested. Participants watched <em>Lie to Me</em>, then judged real honest and deceptive interviews. Viewers were <strong>no more accurate</strong> than controls — but <strong>more likely to misidentify honest people as liars</strong>. The show taught suspicion, not detection.</p>
-    <p class="src"><span class="chip c-cited">abstract-level</span> Levine, Serota &amp; Shulman 2010, <em>Communication Research</em> 37(6) · <a href="https://doi.org/10.1177/0093650210362686">doi</a></p>
-    <p>A 2023 review of the whole lie-detection field concludes that humans are <strong>barely able to pick up lies from nonverbal cues at all</strong>; systematic methods analysing <em>what is said</em> do meaningfully better — and even those stay well below courtroom certainty.</p>
-    <p class="src"><span class="chip c-cited">abstract-level</span> Brennen &amp; Magnussen 2023, <em>Current Directions in Psychological Science</em> 32(5) · <a href="https://doi.org/10.1177/09637214231173095">open access, CC-BY</a></p>
-    <p>And a nine-study paper in <em>Nature Human Behaviour</em>: when people judged statements intuitively, free to use any cue, they performed <strong>at chance</strong>. Instructed to ignore everything except <strong>how detailed the account is</strong>, they consistently told lies from truths. Ignoring more information made them better — the signal is in the specificity of what is said, not in the face.</p>
-    <p class="src"><span class="chip c-cited">abstract-level</span> Verschuere et al. 2023, <em>Nature Human Behaviour</em> 7:718–728 · <a href="https://doi.org/10.1038/s41562-023-01556-2">doi</a> · PMID 36941469</p>
-  </div>
-</details>
-
-<h2><span class="n">Section 2</span>What actually predicts job performance</h2>
-
-<p>These figures were revised downward in 2022 after researchers found that a statistical correction had been applied to the wrong studies for decades. The numbers below are the corrected ones.</p>
-
-<div class="tw">
-<table>
-  <thead><tr><th>Selection method</th><th class="n">Validity ρ</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Structured interview</strong></td><td class="n"><strong>.42</strong></td></tr>
-    <tr><td>Job-knowledge test</td><td class="n">.40</td></tr>
-    <tr><td>Empirically keyed biodata</td><td class="n">.38</td></tr>
-    <tr><td>Work sample</td><td class="n">.33</td></tr>
-    <tr><td>General mental ability</td><td class="n">.31</td></tr>
-    <tr><td>Integrity test</td><td class="n">.31</td></tr>
-    <tr><td>Assessment centre</td><td class="n">.29</td></tr>
-    <tr><td>Situational judgement test</td><td class="n">.26</td></tr>
-    <tr><td>Conscientiousness (contextualised)</td><td class="n">.25</td></tr>
-    <tr><td>Vocational interests</td><td class="n">.24</td></tr>
-    <tr><td>Conscientiousness (overall)</td><td class="n">.21</td></tr>
-    <tr><td><strong>Unstructured interview</strong></td><td class="n"><strong>.19</strong></td></tr>
-    <tr><td>Years of job experience</td><td class="n">.07</td></tr>
-  </tbody>
-</table>
-</div>
-
-<p class="src" style="font-family:var(--mono);font-size:11.5px;color:var(--muted)"><span class="chip c-ok">verified</span> Sackett, Zhang, Berry &amp; Lievens 2023, <em>Industrial and Organizational Psychology</em> 16, Table 1, p.285 · <a href="https://doi.org/10.1017/iop.2023.24">open access, CC-BY</a></p>
-
-<div class="box warn">
-  <span class="lbl">A correlation is not a percentage</span>
-  <p><code>.42</code> does not mean 42% accurate, and it does not mean a 42% chance of hiring the right person. It measures how tightly two things move together.</p>
-</div>
-
-<div class="f">
-  <span class="num">.42 ± .24</span>
-  <p>The authors' own framing of structured-interview validity. The standard deviation is <code>.19</code> and the printed lower bound is <code>.18</code> — so a badly-built structured interview is a worse instrument than a well-built anything else. For unstructured interviews the bottom of the range is about <strong>zero</strong> (<code>−.01</code>).</p>
-  <p class="src"><span class="chip c-ok">verified</span> Sackett et al. 2023, Table 1 and p.292</p>
-</div>
-
-<div class="f">
-  <span class="num">.79 vs .23</span>
-  <p>Black–White score difference (Cohen's <em>d</em>) for cognitive-ability tests versus structured interviews. The cognitive test has the largest group difference in the whole table; the structured interview is among the smallest. So the most accurate common instrument is also one of the fairest — which was not assumed to be possible.</p>
-  <p class="src"><span class="chip c-ok">verified</span> Sackett et al. 2023, Table 1 and Figure 1, pp.285–286</p>
-</div>
-
-<details>
-  <summary>The 40-year error, explained</summary>
-  <div class="body">
-    <p>To know whether a test predicts job performance you need people who took the test <em>and</em> have a performance record — which means people you hired. But hired people are more similar to each other than applicants are, because the extremes were filtered out. Narrow range shrinks correlations, so the raw figure understates the truth. The field corrected for this for decades.</p>
-    <p>To size that correction you need to know how much wider the applicant pool was. You only know that in <em>predictive</em> studies — test the applicants, wait, measure performance. Those show large narrowing. But <strong>about 80% of studies in these meta-analyses were concurrent</strong>: test current employees today, rate them today. Those people were hired years earlier on entirely different grounds, so their range on the test barely narrowed at all.</p>
-    <p>The field took the large correction, derived from the 20%, and applied it to the 80%. The authors are explicit that the formulas were never wrong — only where they were pointed.</p>
-    <p>Effects: work samples fell <code>.54 → .33</code>, cognitive ability <code>.51 → .31</code>, unstructured interviews <code>.38 → .19</code>. Only two predictors went <em>up</em>: vocational interests and empirically keyed biodata. In 21st-century data cognitive ability falls further, to <code>.23</code> across 113 studies.</p>
-    <p>Composite validity barely moved (<code>.47</code> versus <code>.51</code> under the old figures), so selection practice was not undermined — but the <em>ranking</em> changed, and with it the case for building systems around cognitive tests. Removing the cognitive test from a six-method battery now costs about <code>.05</code>, where it used to cost <code>.20</code>.</p>
-    <p class="src"><span class="chip c-ok">verified</span> Sackett et al. 2023, pp.284–291</p>
-  </div>
-</details>
-
-<details>
-  <summary>What "structured" actually means — the 15 components</summary>
-  <div class="body">
-    <p><strong>Content:</strong> questions based on job analysis · the same questions for every candidate · limited prompting and follow-up · better question types · a longer interview with more questions · controlling ancillary information · no candidate questions until the end.</p>
-    <p><strong>Evaluation:</strong> rating each answer rather than an overall impression · anchored rating scales · detailed notes · multiple interviewers · the same interviewers across candidates · no discussion between interviews · interviewer training · combining scores statistically rather than by discussion.</p>
-    <p>Anchored rating scales are the best-evidenced single component: validity of <code>.35</code> with them versus <code>.26</code> without, and inter-rater reliability <code>.77</code> versus <code>.73</code>. Anchoring every scale point beats anchoring only the extremes.</p>
-    <p><strong>An awkward finding:</strong> across 104 interviews described in the research literature, the average used <strong>5.74 of 18</strong> components. Only 4% prohibited discussion between interviews; 19% took detailed notes; 11% combined scores statistically. And face-to-face interviews were <em>more</em> structured (6.50 components) than video ones (4.28) — the opposite of what theory predicts.</p>
-    <p class="src"><span class="chip c-ok">verified</span> Levashina, Hartwell, Morgeson &amp; Campion 2014, <em>Personnel Psychology</em> 67:241–293, pp.244–249, Tables 1–2, p.273 · paywalled: <a href="https://doi.org/10.1111/peps.12052">doi</a></p>
-  </div>
-</details>
-
-<details>
-  <summary>Question types: situational versus past-behaviour</summary>
-  <div class="body">
-    <p>Uncorrected validity, from three meta-analyses: situational questions <code>.25–.35</code>, past-behaviour questions <code>.31</code>. <span class="chip c-guard">these are uncorrected and not comparable to the .42 above</span></p>
-    <p>Inter-rater reliability: situational <code>.79</code>, past-behaviour <code>.76</code>.</p>
-    <p><strong>They measure different things.</strong> Situational questions predict <em>typical</em> performance at <code>.41</code> and <em>maximum</em> performance at <code>.25</code>. Past-behaviour questions predict typical performance at <code>.34</code> but maximum performance at only <code>.11</code> (not significant). So hypothetical questions probe your ceiling; "tell me about a time" probes your normal day.</p>
-    <p>Situational questions map onto job knowledge; past-behaviour questions onto experience. Job-complexity moderation is <strong>inconsistent</strong> across two meta-analyses, and incremental validity findings contradict each other.</p>
-    <p>Predictive studies show validity about <code>.10</code> lower than concurrent studies for both types.</p>
-    <p class="src"><span class="chip c-ok">verified</span> Levashina et al. 2014, pp.267–268 <span class="chip c-cited">the underlying meta-analyses are cited within</span></p>
-  </div>
-</details>
-
-<h2><span class="n">Section 3</span>Fairness — and the mechanism nobody expected</h2>
-
-<div class="f">
-  <span class="num">d = −.02</span>
-  <p>Average demographic difference in structured-interview ratings across post-1996 studies — 10 studies, roughly <strong>121,000 people</strong>, 95% CI [−.06, .01]. Statistically indistinguishable from zero, and slightly favouring minority and female candidates. Before 1996 the same figure was <code>d = .20</code>.</p>
-  <p class="src"><span class="chip c-ok">verified</span> Levashina et al. 2014, Table 3, p.254 <span class="chip c-guard">no average difference detected in ratings, in this evidence set — not "bias is solved", and it says nothing about who was invited to interview</span></p>
-</div>
-
-<div class="box">
-  <span class="lbl">Why it changed</span>
-  <p>Not more structure — the number of structure components used was essentially the same in both sets of studies. What differed: post-1996 studies were significantly more likely to have interviewers <strong>score each answer as it was given</strong>, rather than forming an overall impression at the end.</p>
-  <p>A clerical habit, not a values programme. <span class="chip c-ok">verified · binomial test, p &lt; .03</span></p>
-</div>
-
-<details>
-  <summary>What interviews fail to measure</summary>
-  <div class="body">
-    <p>Correlations between interview ratings and self-reported personality: <strong>conscientiousness .12</strong>, extraversion <code>.08</code>, openness <code>.03</code>, agreeableness <code>.01</code>, emotional stability <code>.01</code>.</p>
-    <p>Meanwhile, across 47 real interviews, <strong>about a third of all questions were aimed at personality.</strong></p>
-    <p><span class="chip c-guard">the counterweight</span> Interviewer-rated personality still predicts job performance roughly <strong>twice as well</strong> as self-reported personality. So interviewers are not useless at reading people — just far worse at it than the process assumes.</p>
-    <p>Practical consequence: rehearsing "I'm a hard worker" is spending time on the channel the instrument barely reads. Rehearse knowledge and concrete past behaviour instead.</p>
-    <p class="src"><span class="chip c-ok">verified</span> Levashina et al. 2014, pp.262–265 <span class="chip c-cited">underlying meta-analyses cited within</span></p>
-  </div>
-</details>
-
-<h2><span class="n">Section 4</span>Impression management, and what faking costs</h2>
-
-<p>What follows treats self-presentation as a normal feature of hiring rather than a moral failing, because that is how the evidence treats it.</p>
-
-<div class="f">
-  <span class="num">4.02 vs 1.38</span>
-  <p>Self-reported use of <strong>honest self-promotion</strong> versus <strong>inventing qualifications</strong>, on a 1–5 scale, across <strong>448 real placement interviews</strong> by 80 candidates with professional interviewers who had conducted an average of 175 interviews each.</p>
-  <p>Full ranking: honest self-promotion 4.02 · honest ingratiation 3.53 · <strong>deceptive ingratiation 2.99</strong> · honest defensive explanations 2.77 · embellishing real qualifications 2.04 · hiding negatives 1.54 · inventing qualifications 1.38.</p>
-  <p class="src"><span class="chip c-ok">verified</span> Roulin &amp; Bourdage 2017, <em>Frontiers in Psychology</em> 8:29, Table 2, p.7 · <a href="https://doi.org/10.3389/fpsyg.2017.00029">open access, CC BY</a></p>
-</div>
-
-<div class="box">
-  <span class="lbl">The finding most people get wrong</span>
-  <p>The most common form of dishonesty in a job interview is not a fabricated credential. It is <strong>insincere flattery</strong> — deceptive ingratiation is the third most-used tactic of the seven, above honest defensive explanations.</p>
-</div>
-
-<details>
-  <summary>Who fakes — and the correction we had to make</summary>
-  <div class="body">
-    <p>An earlier draft of this talk attached the more dramatic column to "fabrication." That was wrong. <strong>Embellishing what is real</strong> and <strong>inventing what isn't</strong> are two different behaviours with two different profiles.</p>
-    <div class="tw"><table>
-      <thead><tr><th></th><th class="n">Embellishing</th><th class="n">Inventing</th></tr></thead>
-      <tbody>
-        <tr><td>Competitive worldviews</td><td class="n">.45</td><td class="n">.39</td></tr>
-        <tr><td>Machiavellianism</td><td class="n">.43</td><td class="n">.31</td></tr>
-        <tr><td>Psychopathy</td><td class="n">.37</td><td class="n">.30</td></tr>
-        <tr><td>Honesty-Humility</td><td class="n">−.39</td><td class="n">−.25</td></tr>
-        <tr><td>Conscientiousness</td><td class="n">−.31</td><td class="n">−.34</td></tr>
-      </tbody>
-    </table></div>
-    <p>Note the ordering flips on conscientiousness.</p>
-    <p><span class="chip c-guard">essential</span> These are correlations from <strong>one study of 80 people reporting on themselves</strong>. They describe group-level tendencies and cannot be reversed to diagnose an individual.</p>
-    <p><strong>The reassuring half:</strong> honest self-promotion is essentially uncorrelated with every dark trait (psychopathy <code>.03</code>, Machiavellianism <code>−.03</code>) and positively related to extraversion and self-confidence. It is also the most-used behaviour of the seven. Selling yourself honestly is the norm, not a warning sign.</p>
-    <p><strong>Two more oddities:</strong> self-monitoring — the "good actor" trait — did <em>not</em> predict faking at all; it predicted only <em>switching</em> tactics between interviews. And students further into their degree faked <em>less</em>, not more.</p>
-    <p class="src"><span class="chip c-ok">verified</span> Roulin &amp; Bourdage 2017, Table 2 and p.6</p>
-  </div>
-</details>
-
-<div class="box warn">
-  <span class="lbl">A claim we removed from this talk</span>
-  <p>We wanted to tell you that fabricated stories fall apart because they are <strong>inconsistent</strong> — that people who invent things change their story between interviews.</p>
-  <p>The study measured exactly that, across up to 15 interviews per person. <strong>Inventing qualifications was the second-most-<em>stable</em> behaviour of all seven</strong>, almost as consistent as honest self-promotion. What people actually varied was flattery and excuses.</p>
-  <p>So consistency is not the tell. If you hear someone make that claim, they are guessing. <span class="chip c-ok">verified · coefficient-of-variation intervals, p.6</span></p>
-</div>
-
-<h3>So what does faking actually do?</h3>
-
-<div class="f">
-  <span class="num">Two paths</span>
-  <p>Deceptive impression management has a <strong>positive direct effect</strong> on interviewer ratings — and a <strong>negative indirect effect</strong>, because it reduces the plausibility of your answers and increases verbal uncertainty. Plausibility is itself a predictor of ratings. This explains why older studies appeared to contradict each other: they measured different paths.</p>
-  <p class="src"><span class="chip c-cited">abstract-level</span> Roth, Klehe &amp; Willhardt 2021, <em>Personnel Assessment and Decisions</em> 7(1), N = 182 · <a href="https://doi.org/10.25035/pad.2021.01.007">open access</a></p>
-</div>
-
-<div class="f">
-  <span class="num">Net negative</span>
-  <p>In the largest modern study — <strong>693 high-fidelity interviews</strong> — deceptive impression management related <em>linearly and negatively</em> to interview performance. The same study found <strong>honest</strong> impression management follows an <strong>inverted U</strong>: effective up to a point, then detrimental.</p>
-  <p class="src"><span class="chip c-cited">abstract-level</span> Robie, Christiansen, Bourdage, Powell &amp; Roulin 2020, <em>IJSA</em> 28(4):522–530 · <a href="https://doi.org/10.1111/ijsa.12307">doi</a> (paywalled)</p>
-</div>
-
-<div class="f">
-  <span class="num">206 hired</span>
-  <p>People who used more deceptive impression management in their interviews and were <strong>then hired</strong> reported <strong>worse fit</strong> with the job and organisation — and worse fit predicted <strong>lower well-being, lower engagement and higher job stress</strong>.</p>
-  <p>So the modern answer to "what happens if I fake it" is not mainly that you get caught. It is that you succeed, and end up in a role designed for the person you described.</p>
-  <p class="src"><span class="chip c-cited">abstract-level</span> Charbonneau, Powell, Spence &amp; Lyons 2021, <em>Personnel Assessment and Decisions</em> 7(1), two-phase field study · <a href="https://doi.org/10.25035/pad.2021.01.006">open access</a></p>
-</div>
-
-<div class="f">
-  <span class="num">63.4%</span>
-  <p>The best accuracy anyone has achieved detecting interview faking through systematic content analysis. On a two-way judgement where guessing scores 50%. Multimodal machine-learning approaches perform "above chance" but their usefulness is described as questionable; a thermal-imaging study found essentially nothing.</p>
-  <p>And <strong>faking warnings do not work</strong>: telling candidates you use lie-detection methods reduced neither faking intentions nor faking, and made candidates feel worse about the process.</p>
-  <p class="src"><span class="chip c-cited">abstract-level</span> Roulin &amp; Powell 2018, <em>Journal of Personnel Psychology</em> 17(3) · warnings: Bill &amp; Melchers 2022, <em>IJSA</em> 31(1)</p>
-</div>
-
-<details>
-  <summary>Faking is often fear, not strategy</summary>
-  <div class="body">
-    <p>In 202 real interviewees, <strong>interview anxiety was positively related to deceptive impression management</strong>. Honesty-humility and extraversion related to faking indirectly, via anxiety.</p>
-    <p>Which reframes the whole topic: a good deal of interview dishonesty looks like a fear response under time pressure rather than calculated advantage-seeking. It also means the intervention is the same as the one for nerves.</p>
-    <p class="src"><span class="chip c-cited">abstract-level</span> Powell, Bourdage &amp; Bonaccio 2020, <em>Journal of Business and Psychology</em> 36(5):829–840</p>
-  </div>
-</details>
-
-<details>
-  <summary>Charm works on people, not on processes</summary>
-  <div class="body">
-    <p>Across 32 studies (n = 3,792), impression management raised interview ratings by <code>rc = .22</code>. Self-focused tactics <code>.24</code>; other-focused <code>.17</code>.</p>
-    <p>But split by <em>who scores</em>: <strong><code>.27</code> when the person exposed to the behaviour also rated the candidate</strong>, versus <strong><code>.11</code> and non-significant when an uninvolved observer rated a recording</strong>.</p>
-    <p>The mechanism is cognitive load, not carelessness. Researchers specifically tested whether the engaged interviewer filters impression management <em>better</em> — and found the opposite.</p>
-    <p><span class="chip c-guard">note</span> This does not make observers objective. It means impression-management contamination was not detectable in their ratings in that smaller subset.</p>
-    <p>Also worth knowing: real job-seekers convert impression management into more than <strong>double</strong> the rating benefit students do (<code>.36</code> vs <code>.15</code>) at the same frequency of use — which suggests it is a learned skill, and that student-sample research understates it.</p>
-    <p class="src"><span class="chip c-ok">verified</span> Peck &amp; Levashina 2017, <em>Frontiers in Psychology</em> 8:201, Tables 2, 6, 8 · <a href="https://doi.org/10.3389/fpsyg.2017.00201">open access, CC BY</a></p>
-  </div>
-</details>
-
-<div class="box warn">
-  <span class="lbl">Three things nobody has measured</span>
-  <p><strong>1.</strong> The figure everyone quotes — that 85–99% of candidates embellish — is from <strong>2007</strong>, from a student sample, and <strong>has never been re-measured</strong>. Papers published in 2020 still cite that 2007 source.</p>
-  <p><strong>2.</strong> There is <strong>no post-2017 peer-reviewed evidence</strong> on how often CV misrepresentation is discovered, or what happens to people when it is.</p>
-  <p><strong>3.</strong> There is <strong>no peer-reviewed estimate</strong> of how many people use language models to write real job applications.</p>
-  <p>Anyone quoting you a number for these is guessing.</p>
-</div>
-
-<h2><span class="n">Section 5</span>Phone, video, asynchronous, AI</h2>
-
-<details open>
-  <summary>Two studies that looked like a contradiction</summary>
-  <div class="body">
-    <p>A 2026 meta-analysis (24 studies, 31 samples, 3,874 people in total) found no average difference in interview ratings between technology-mediated and face-to-face interviews: <code>ρ = −.01</code>, 95% CI [−.17, .16]. To be exact about what that null rests on: the <strong>ratings comparison itself draws on 7 samples and 898 people</strong> — the larger figures describe the whole meta-analysis across all outcomes.</p>
-    <p>A randomised experiment (<strong>N = 88</strong>, identical structured interview) found candidates scored <strong><code>d = 0.89</code> lower by telephone</strong> and <strong><code>0.49</code> lower on video</strong>.</p>
-    <p><strong>The resolution:</strong> when the meta-analysis coded that experiment it kept only the <em>video</em> arm and <strong>discarded the telephone arm</strong> — where the largest effect was. For fairness it used the experiment's <em>post</em>-interview measure (no difference) rather than the large pre-interview one. So the two largely agree, and what looked like a contradiction was a coding decision.</p>
-    <p>The meta-analysis is candid about the rating estimate: "It would be imprudent to draw any conclusion at this point." Only 18% of its variance was attributable to artifacts.</p>
-    <p class="src"><span class="chip c-ok">verified</span> Moon, Park &amp; Park 2026, <em>Current Psychology</em> 45:349 (<a href="https://doi.org/10.1007/s12144-025-08946-x">open access</a>) · Melchers, Petrig, Basch &amp; Sauer 2021, <em>Frontiers in Psychology</em> 11:603632 (<a href="https://doi.org/10.3389/fpsyg.2020.603632">open access</a>)</p>
-  </div>
-</details>
-
-<div class="f">
-  <span class="num">Monologue: immune</span>
-  <p>In that experiment the <strong>prepared self-introduction showed no medium effect</strong> (<code>d = .21</code> and <code>.13</code>, not significant) while the interactive structured questions took the entire hit. The authors' explanation: structured questions demand continuous real-time adjustment; the introduction is a monologue.</p>
-  <p>Practical reading: rehearsed material travels through any medium. Improvised interaction may not — so rehearse the <em>interaction</em>.</p>
-  <p class="src"><span class="chip c-ok">verified</span> Melchers et al. 2021, Table 2, p.10 <span class="chip c-craft">the practical instruction is our inference</span></p>
-</div>
-
-<div class="f">
-  <span class="num">Not stress</span>
-  <p>The same experiment found <strong>no differences between media</strong> in interview anxiety, self-reported strain, or heart-rate variability. So the remote performance gap is not a nerves effect. Separately, heart-rate variability correlated with <em>no</em> performance measure (maximum <code>.15</code>), and measured strain peaked during the cognitive-ability test rather than the interview.</p>
-  <p class="src"><span class="chip c-ok">verified</span> Melchers et al. 2021, Tables 1–3</p>
-</div>
-
-<div class="f">
-  <span class="num">Reps beat brains</span>
-  <p>Prior interview experience predicted ratings (<code>.30</code>, <code>.23</code>, <code>.22</code>). The 50-item cognitive-ability test administered in the same study <strong>did not significantly predict interview performance</strong>. The strongest argument available for mock interviews over more reading.</p>
-  <p class="src"><span class="chip c-ok">verified</span> Melchers et al. 2021, Table 1, p.9</p>
-</div>
-
-<details>
-  <summary>Candidates mispredict how bad remote interviews feel</summary>
-  <div class="body">
-    <p>Before the interview, candidates rated telephone and video formats far less favourably than face-to-face (<code>d</code> up to <strong>1.38</strong>). Afterwards, fairness differences were <strong>gone</strong> — because the remote conditions <em>rose</em> (telephone <code>d = 0.70</code>, video <code>d = 1.14</code>) while face-to-face stayed flat.</p>
-    <p>Across formats generally, candidates rate the <em>employer</em> lower (organisational attractiveness <code>ρ = −.17</code>). But intention to pursue the job falls specifically for <strong>asynchronous</strong> formats (<code>−.20</code>) while <strong>live video is neutral</strong> (<code>+.03</code>).</p>
-    <p><span class="chip c-guard">important confound</span> In that evidence, asynchronous and AI-scored are <strong>perfectly confounded</strong> — literally the same eight samples. Nobody can currently separate "recording alone" from "scored by a machine."</p>
-    <p>Also: telephone and videoconference did not differ from each other on anything, which contradicts what media-richness and social-presence theories predict.</p>
-    <p class="src"><span class="chip c-ok">verified</span> Melchers et al. 2021 · Moon et al. 2026, Table 2</p>
-  </div>
-</details>
-
-<h3>What AI interview systems actually score</h3>
-
-<div class="f">
-  <span class="num">Transcripts</span>
-  <p>One major vendor's own AI product document (5 pages, generated 19 December 2025) describes its AI-scored interview pipeline as: recorded response → transcript → language model → predicted competency rating → candidates "shown in tiers and stack-ranked."</p>
-  <p>Searching that document for <strong>face, facial, visual, video, tone, voice, vocal, expression, emotion, body, gesture, appearance, smile and eye</strong> returns <strong>zero occurrences of any of them.</strong> Every scored signal described is text.</p>
-  <p class="src"><span class="chip c-ok">verified</span> HireVue, "AI in Hirevue Products", p.2 and keyword sweep of all five pages <span class="chip c-guard">one vendor, one document, one date — other products and earlier versions may differ, and absence from a document is not proof about an industry</span></p>
-</div>
-
-<div class="f">
-  <span class="num">The criterion problem</span>
-  <p>What is that model predicting? Not job performance. It is trained, in the document's own words, to predict <strong>an expert evaluator's rating</strong>. The game-based assessment predicts your score on <em>a different psychometric test</em>. The assessment builder was trained on ratings <em>generated by a language model and reviewed by psychologists</em>.</p>
-  <p>Nowhere in five pages is the target a work outcome, and <strong>no coefficient is given for any link in any chain</strong> — no validity figure, no adverse-impact ratio, no independent bias audit. The word "fair" appears six times and is never operationalised; "objective" is claimed for the two products that use no AI at all.</p>
-  <p class="src"><span class="chip c-ok">verified</span> HireVue product document, pp.2–4 and keyword counts <span class="chip c-craft">the "imitation of a subjective instrument" reading is ours</span></p>
-</div>
-
-<div class="box">
-  <span class="lbl">The finding that surprises everyone</span>
-  <p>Machines appear to be <strong>harder</strong> to fake than humans, not easier.</p>
-  <p>152 people did the same asynchronous interview twice — once instructed to answer honestly, once to answer as a candidate trying to get hired. Score inflation: <strong>self-reported personality <code>d = 0.62</code>, human interviewer ratings <code>0.22</code>, AI ratings <code>0.14</code>.</strong> The AI was the least fakeable channel.</p>
-  <p>It replicates in the field. A study of 144 real interviewee–interviewer pairs found asynchronous video interviews produced <strong>fewer</strong> deceptive behaviours than live video, with AI-assisted assessment specifically reducing outright invention. And a separate experiment found that simply telling people their answers would be automatically evaluated <strong>reduced</strong> deceptive impression management.</p>
-  <p><span class="chip c-guard">unresolved tension</span> One paper points the other way — it found AI interviewers <em>increase the intention</em> to fake. But it measured intentions; the three above measured behaviour.</p>
-  <p class="src" style="font-family:var(--mono);font-size:11.5px;color:var(--muted);border-top:1px solid var(--rule);padding-top:8px;margin-top:8px"><span class="chip c-cited">abstract-level</span> Hickman, Liff, Willis &amp; Kim 2025, <em>IJSA</em> 33(2) · Suen &amp; Hung 2023, <em>IT &amp; People</em> 38(2) · Langer, König &amp; Hemsing 2020, <em>JMP</em> 35(4)</p>
-</div>
-
-<details>
-  <summary>Using ChatGPT to write your answers</summary>
-  <div class="body">
-    <p>One preregistered experiment, <strong>N = 245</strong>, three conditions: answers written unaided, answers taken <em>verbatim</em> from ChatGPT, and ChatGPT answers <em>personalised</em> by the candidate.</p>
-    <p>The ChatGPT conditions scored <strong>considerably higher on overall performance and content</strong>. Delivery ratings did not differ. But they received <strong>lower honesty ratings</strong> — and those candidates rated the process as <em>less</em> procedurally fair than the people who wrote their own.</p>
-    <p><span class="chip c-guard">one study</span> This is the first and principal study of its kind. And there is no peer-reviewed estimate of how common the practice actually is, so any percentage you see quoted is not a research finding.</p>
-    <p class="src"><span class="chip c-cited">abstract-level</span> Canagasuriam &amp; Lukacik 2024, <em>IJSA</em> 33(1) · <a href="https://doi.org/10.1111/ijsa.12491">doi</a></p>
-  </div>
-</details>
-
-<h2><span class="n">Section 6</span>Anxiety</h2>
-
-<div class="f">
-  <span class="num">2.50 = 2.50</span>
-  <p>Mean interview anxiety of candidates who were <strong>hired</strong> versus those who were <strong>not</strong>, across 307 real high-stakes interviews (154 hired). <code>t(305) = 0.049, p = .96</code>. Identical to two decimal places.</p>
-  <p class="src"><span class="chip c-ok">verified</span> Schneider, Powell &amp; Bonaccio 2019, <em>IJSA</em> 27(4):328–336, §2.1 · <a href="https://doi.org/10.1111/ijsa.12263">open access, CC BY 4.0</a></p>
-</div>
-
-<div class="f">
-  <span class="num">.02 to .07</span>
-  <p>Correlation between interview anxiety and job performance measured <strong>7.5 months later</strong> — by supervisors <em>and</em> by an average of 17 people each participant supervised. All four correlations non-significant, and <strong>every one positive</strong>: the expected negative relationship was not even directionally present. The interview itself did predict performance (<code>r = .20, p = .01</code>).</p>
-  <p class="src"><span class="chip c-ok">verified</span> Schneider et al. 2019, Table 1 and Results <span class="chip c-guard">one job type, one sample; and one moderation effect did appear — in 1 of 4 outcomes</span></p>
-</div>
-
-<details>
-  <summary>The mechanism, and therefore the fix</summary>
-  <div class="body">
-    <p>Anxiety does not cost you points by making you look nervous. It works through <strong>attention</strong>: threat-monitoring competes with the task of constructing an answer, and self-focus reduces disclosure. The measurable output is <strong>less detailed answers</strong>.</p>
-    <p>So the trainable target is <strong>specificity, not calmness</strong>. "Relax" is unusable advice; "your answers get thinner under pressure, so over-prepare the detail" is actionable.</p>
-    <p>The paper's own line: anxious candidates may receive lower ratings if they struggle to articulate a coherent answer, but may communicate clearly once hired.</p>
-    <p><strong>What people are actually anxious about:</strong> of five measured dimensions, the highest was fear of the <em>outcome</em> (2.87) and the <strong>lowest was anxiety about communicating</strong> (2.18). People fear the verdict, not the talking.</p>
-    <p><strong>Stop reading your own instruments.</strong> Self-rated interview performance correlated <code>−.46</code> with how anxious people felt and <code>−.51</code> with strain — but only about <code>.39</code> with what raters actually gave. Your sense of how it went measures your adrenaline.</p>
-    <p><span class="chip c-cited">cited only</span> A prior meta-analysis puts the anxiety→interview-rating relationship at about <code>r = −.19</code>. We could not obtain that meta-analysis.</p>
-    <p class="src"><span class="chip c-ok">verified</span> Schneider et al. 2019, §1.3 and Table 1 · self-rating figures: Melchers et al. 2021, Table 1</p>
-  </div>
-</details>
-
-<div class="box note">
-  <span class="lbl">First impressions</span>
-  <p>Impressions formed during the opening minutes relate <strong>more strongly to how early answers are scored than later ones</strong>, and part of that influence overlaps with genuinely job-related content — so it is not purely bias. Two implications: the interview starts at hello, and <strong>the effect fades, so a weak start is recoverable</strong>.</p>
-  <p><span class="chip c-guard">no effect size available</span> Our copy of this study is the abstract only. <code>N = 163</code> mock interviews is the only recoverable number, and we will not invent one. The "first 20 seconds decide 80%" claim circulating online has no support anywhere.</p>
-  <p class="src" style="font-family:var(--mono);font-size:11.5px;color:var(--muted);border-top:1px solid var(--rule);padding-top:8px;margin-top:8px">Swider, Barrick &amp; Harris 2016, <em>Journal of Applied Psychology</em> 101(5):625–638 · <a href="https://pubmed.ncbi.nlm.nih.gov/26727208/">PubMed</a> (paywalled)</p>
-</div>
-
-<h2><span class="n">Section 7</span>Building answers when you don't have commercial experience</h2>
-
-<div class="f">
-  <span class="num">No penalty</span>
-  <p><strong>Prior job experience does not moderate the validity of past-behaviour questions.</strong> Candidates without work experience substitute non-work experience — and the review notes that doing so "is common in practice."</p>
-  <p>So a volunteer project, a university project, an open-source contribution or a freelance job is not a second-class answer. What matters is naming the context accurately and owning the specifics.</p>
-  <p class="src"><span class="chip c-ok">verified</span> Levashina et al. 2014, p.268 <span class="chip c-cited">original study cited within</span></p>
-</div>
-
-<details>
-  <summary>The six steps, and the six probes</summary>
-  <div class="body">
-    <p><strong>Structure:</strong> Context — the problem and the constraint that made it hard. Responsibility — what was specifically yours. Action — what you decided and did. Result — a metric, artifact, feedback or visible change. Lesson — what changed in how you think. Application — why this role should care.</p>
-    <p><span class="chip c-craft">craft, not evidence</span> The first four map onto how these interviews are scored. The last two come from a career-coaching framework with <strong>no validation study behind it</strong>. Useful; not evidence.</p>
-    <p><strong>The six probes a story must survive:</strong> What did you personally decide? What alternative did you reject, and why? How exactly was the result measured? What failed? Who disagreed with you, or depended on you? Which artifact exists because of your work?</p>
-    <p>Answer at least two before being asked. Volunteering the thing that failed, or how you measured it, is the difference between a mid and a top score against an anchored scale.</p>
-    <p><strong>A probe is a scoring signal, not an attack.</strong> Debriefed candidates reported that probing told them what the interviewer thought mattered. (Which is also why probing has been found to <em>increase</em> faking — probes cue the desired answer.)</p>
-    <p class="src"><span class="chip c-ok">verified</span> Levashina et al. 2014, pp.270–273 · framework: Evans, "CARLA", launchedbylinda.com (career-coaching blog, no evidence cited)</p>
-  </div>
-</details>
-
-<div class="box warn">
-  <span class="lbl">An uncomfortable finding about preparation</span>
-  <p>Two studies found that <strong>more preparation time correlated with more faking</strong> — and that preparing via online videos or paid interview coaching correlated with more deceptive impression management as well as more honest impression management.</p>
-  <p>We don't think preparing makes people dishonest. The likelier reading is that the same pressure that drives hard preparation drives the urge to close the gap between what you have and what the advert asked for. The better response is to name the gap out loud in the room rather than paper over it.</p>
-  <p class="src" style="font-family:var(--mono);font-size:11.5px;color:var(--muted);border-top:1px solid var(--rule);padding-top:8px;margin-top:8px"><span class="chip c-cited">abstract-level</span> Schudlik, Reinhard &amp; Müller 2020, <em>IJSA</em> · <span class="chip c-craft">the interpretation is ours</span></p>
-</div>
-
-<h2><span class="n">Section 8</span>Your rights in the EU</h2>
-
-<div class="box warn">
-  <span class="lbl">Not legal advice</span>
-  <p>General orientation only, based on reading the official texts. If you have an actual case, get actual advice.</p>
-</div>
-
-<h3>Already in force</h3>
-
-<p>Discrimination in <strong>recruitment</strong> is banned across the EU on grounds including <strong>age, sex, disability, ethnic or racial origin, religion or belief, and sexual orientation</strong> — public and private sector, covering recruitment, working conditions, promotion, pay, training, pensions and dismissal.</p>
-
-<p><strong>If you have a disability you can request reasonable adjustments — and this expressly covers the job application process</strong>, not only employment after hiring.</p>
-
-<p><strong>How to use it:</strong> every EU country has a <strong>national equality body</strong>. They will explain your situation, help you make a complaint, and with your agreement some will take the case to court on your behalf. Trade unions, NGOs and lawyers are named alternatives. Remedies, depending on national law, include <strong>compensation, being placed in the job, or an order requiring the employer to remedy the discrimination and provide the adjustment</strong>.</p>
-
-<p class="src" style="font-family:var(--mono);font-size:11.5px;color:var(--muted)"><span class="chip c-ok">verified</span> <a href="https://europa.eu/youreurope/citizens/work/work-abroad/equal-treatment-with-nationals/index_en.htm">Your Europe — Equal treatment at work</a> (official EU portal). It cites Directive 2000/78/EC, Regulation 492/2011 and Directive 2014/54/EU. <span class="chip c-guard">this page says nothing about specific interview questions — do not cite it for "they can't ask you X"</span></p>
-
-<h3>AI in recruitment</h3>
-
-<details>
-  <summary>What the AI Act gives you, and when</summary>
-  <div class="body">
-    <p><strong>Emotion inference is prohibited</strong> in workplace and education settings, except for medical or safety reasons — in force since <strong>2 February 2025</strong>. But note the scope: it applies to inference <em>from biometric data</em>. A transcript-only system is outside it. And the boundary is precise — merely detecting a smile is out of scope; converting that smile into an inferred emotion is in.</p>
-    <p>The law's own reasoning cites the science directly, naming "the limited reliability, the lack of specificity and the limited generalisability" of these systems, and the imbalance of power at work.</p>
-    <p><strong>Recruitment AI is high-risk.</strong> Systems for recruitment or selection — placing targeted job ads, filtering applications, evaluating candidates — are listed high-risk uses. There is a narrow exemption for systems that pose no significant risk, but any system that <strong>profiles</strong> you "shall always be considered to be high-risk," which covers essentially every candidate-scoring tool. <span class="chip c-craft">that last clause is our inference from the profiling provision</span></p>
-    <p><strong>You must be told.</strong> Where a high-risk system makes <em>or assists in making</em> decisions about you, the deployer must inform you — and the accompanying recital says that should include the system's purpose, the type of decisions it makes, and your right to an explanation.</p>
-    <p><strong>You can ask why.</strong> For an adverse decision based on such a system's output, you have a right to "clear and meaningful explanations of the role of the AI system in the decision-making procedure and the main elements of the decision taken."</p>
-    <p><strong>You can complain.</strong> Any person with grounds to consider the Regulation has been infringed may complain to a national market surveillance authority — no standing test, no deadline. But the authority need only take the complaint into account, and no individual remedy attaches.</p>
-    <p><strong>The date: 2 December 2027.</strong> The core high-risk regime for recruitment AI was postponed from August 2026 by the 2026 amending Regulation. The emotion-inference prohibition was <em>not</em> changed.</p>
-    <p><strong>What you do not get:</strong> a private-sector employer owes you no fundamental-rights impact assessment for a hiring tool — that duty covers public bodies, private entities providing public services, and credit and insurance deployers only. And the worker-consultation duty applies to workers, not applicants.</p>
-    <p class="src"><span class="chip c-ok">verified</span> Regulation (EU) 2024/1689 — Art 3(39) p.48, Art 5(1)(f) p.51, Art 6(3) p.54, Art 26 pp.67–69, Art 85 &amp; 86 p.110, Annex III point 4 p.127, recitals 18 and 44 · <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng">EUR-Lex</a><br>Regulation (EU) 2026/1744 — Art 1(40) amending Art 113, p.35 · <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng">EUR-Lex</a></p>
-  </div>
-</details>
-
-<div class="box warn">
-  <span class="lbl">Three things genuinely unresolved</span>
-  <p><strong>1.</strong> Whether a job interview counts as "the workplace" for the emotion-inference prohibition. Neither text defines "workplace", and neither mentions applicants in that article. The stronger textual reading includes hiring — but it is not settled.</p>
-  <p><strong>2.</strong> Whether the right to an explanation has practical effect before December 2027, since it applies from August 2026 while the rules classifying a system as high-risk do not.</p>
-  <p><strong>3.</strong> Whether a job rejection "produces legal effects or similarly significantly affects" a candidate, which is a condition of that right.</p>
-  <p>The Commission owes guidelines that would probably settle the first. <strong>We have not read them</strong>, and this page does not guess at their content.</p>
-</div>
-
-<h2><span class="n">Section 9</span>Poland</h2>
-
-<div class="f">
-  <span class="num">4 of 26</span>
-  <p>Of the 26 most common interview questions listed by the Polish government careers portal, only <strong>four are behavioural</strong> ("tell me about a time"). Three are situational. The other <strong>nineteen</strong> are self-assessment, preference and opinion questions — strengths and weaknesses, working alone versus in a team, fixed versus performance-based pay, the ideal company, hobbies, "name your greatest fears," how you assess your previous boss.</p>
-  <p>So story-based frameworks prepare you for roughly 15% of the questions you will actually be asked here. Prepare both.</p>
-  <p class="src"><span class="chip c-ok">verified</span> <a href="https://zielonalinia.gov.pl/jak-przygotowac-sie-do-rozmowy-kwalifikacyjnej-737/">Zielona Linia</a>, published 22 December 2025 <span class="chip c-craft">the classification of question types is ours</span></p>
-</div>
-
-<details>
-  <summary>Six questions worth asking them — and four the page omits</summary>
-  <div class="body">
-    <p>From the same portal, and this is the strongest part of it: What are the priorities for this role? What does onboarding look like, and who owns it? <strong>How is performance actually assessed here?</strong> <strong>What determines pay, and what could I do to earn more?</strong> Who will I work with, internally and externally? What are the promotion prospects? Plus: what the next stages are and when you will hear.</p>
-    <p><span class="chip c-craft">ours, not the portal's</span> What it leaves out, and what matters more in Poland than in most markets: <strong>contract type</strong> (umowa o pracę, umowa zlecenie, or B2B), probation period, working time, remote arrangements, and notice period.</p>
-    <p><strong>One trap the page sets and never flags:</strong> it lists "how do you assess your previous boss" as a common question, and separately lists badmouthing a previous employer as one of nine fatal errors. Rehearse that one deliberately.</p>
-  </div>
-</details>
-
-<details>
-  <summary>The same page also contains folk psychology — worth knowing why</summary>
-  <div class="body">
-    <p>Alongside genuinely useful local guidance (dress codes by sector, bring document copies, phone off, prepare a salary position), the page states:</p>
-    <p>That touching your mouth or nose is "a signal that you are most probably lying" — a claim directly contradicted by the deception research above.</p>
-    <p>That the first 20 seconds, 20 words and 20 gestures determine 80% of how an employer judges you. This is the only number in the article and it is unsourced.</p>
-    <p>That blue, brown, green and navy each "inspire trust," and that too much grey makes you appear indecisive with nothing interesting to offer. A signal sent by four of eight options is not a signal.</p>
-    <p>It also asks readers simultaneously to control their gestures and facial expressions <em>and</em> to behave naturally.</p>
-    <p><strong>None of this is dishonest and none of it was presented as research.</strong> We include it because it is where a great many people actually get their interview advice — a government domain, first in search results, with a legal-currency banner and an explicit disclaimer that it is not a binding legal interpretation. Its only two external references are a commercial HR site and a CV-writing vendor.</p>
-    <p>The transferable skill: an official-looking source can be entirely right about local procedure and entirely wrong about human behaviour. The question is never who said it — it is what was measured.</p>
-  </div>
-</details>
-
-<h2><span class="n">Section 10</span>The instrument was built in America — cross-cultural self-presentation</h2>
-
-<details open>
-  <summary>Modesty reads as missing data</summary>
-  <div class="body">
-    <p>The structured interview was built and validated in North America, and its anchored scales score <em>personal action</em>: a mid-range answer requires "clear personal action and an observable result." A candidate raised on a professional etiquette where the correct register is "we did it" — and where a Polish government portal lists <em>"don't boast"</em> among its interview commandments — answers with a collective account, and the rubric has nothing to attach a score to. Modesty doesn't read as modesty through this instrument; it reads as missing data. That consequence is our inference from the rubric mechanics, labelled as such.</p>
-    <p>The cross-cultural evidence is real and less flattering to folk wisdom than expected. A 10-country study (<strong>N = 3,509</strong>, Russia among the countries) found cultures differ in which self-presentation tactics candidates endorse — most of all on <strong>"individual excellence"</strong> — and that self-presentation was assigned <em>more</em> importance in hierarchical, high-embeddedness cultures with larger income disparities, with the <strong>American sample as the exception</strong> to the pattern. So "post-Soviet candidates undersell, Americans oversell" is folklore too; what differs is which tactics feel appropriate.</p>
-    <p><span class="chip c-guard">honest gap</span> No study measures how CIS-raised candidates actually score in Western-style interviews. We claim the mechanism and the documented tactic differences — not a penalty coefficient nobody has published.</p>
-    <p class="src"><span class="chip c-cited">abstract-level</span> Sandal, van de Vijver, Bye et al. 2014, <em>Journal of Cross-Cultural Psychology</em> 45(6) · <a href="https://doi.org/10.1177/0022022114532353">doi</a> · Green OA · companion: Bye et al. 2011, <em>Applied Psychology</em> 60(1) · <a href="https://doi.org/10.1111/j.1464-0597.2010.00432.x">doi</a></p>
-    <p>The practical translation layer, not a personality transplant: <strong>"I" for actions, "we" for credit</strong> ("the team shipped the migration — my part was the schema validation"); <strong>precision instead of praise</strong> (numbers and artifacts are culturally neutral; adjectives aren't); and <strong>naming the register switch</strong> out loud, which is itself a demonstration of self-awareness.</p>
-  </div>
-</details>
-
-<h2><span class="n">Integrity</span>What we could not verify, and what we got wrong</h2>
-
-<p>A research page that only lists its strengths isn't one. These are the limits.</p>
-
-<details>
-  <summary>Claims we could not verify (17)</summary>
-  <div class="body">
-    <p><strong>Cited inside our sources, primary study not obtained:</strong> the anxiety→interview-rating figure of <code>r = −.19</code> · the claim that interviewers cannot reliably distinguish honest from deceptive impression management (this is the load-bearing citation for the whole detection argument) · the structure moderator <code>.27</code> vs <code>.17</code> · the 85–99% embellishment prevalence · the underlying meta-analyses for question-type validity.</p>
-    <p><strong>Abstract-only sources:</strong> the first-impressions study — no effect size exists in our copy, only <code>N = 163</code>.</p>
-    <p><strong>Truncated source:</strong> our saved copy of the anxiety paper cuts off mid-table, losing all moderation statistics and the discussion. It is CC BY 4.0 and can simply be refetched.</p>
-    <p><strong>Closed access, no statistic obtained:</strong> a 2021 meta-analysis on deceptive impression management and interview ratings exists (Ho, Powell &amp; Stanley, <em>Canadian Journal of Behavioural Science</em> 53(2)) and is the direct successor to the 2017 meta-analysis we do cite. <strong>We verified no number from it and this page carries none.</strong></p>
-    <p><strong>Quarantined:</strong> one paper on AI interview interfaces has a 2025 corrigendum we have not read. None of its figures appear anywhere on this page.</p>
-    <p><strong>Legal:</strong> the three unresolved questions listed in Section 8, plus the Commission guidelines we have not read.</p>
-    <p><strong>Scope limits:</strong> the vendor document covers only the products it lists, as of December 2025. And no source anywhere in this collection provides a validity figure for AI interview scoring — that number does not currently exist in the literature we could reach.</p>
-    <p><strong>Not measured by anyone:</strong> CV-fraud discovery rates and consequences; prevalence of language-model use in real applications; Poland's position on any cross-cultural scale (the framework file we had contains no country data at all).</p>
-  </div>
-</details>
-
-<details>
-  <summary>Claims we had in earlier drafts and removed</summary>
-  <div class="body">
-    <p><strong>"Fabricated stories are inconsistent across interviews."</strong> Contradicted by the data — inventing qualifications was the second-most-stable behaviour measured.</p>
-    <p><strong>Dark-trait correlations attributed to fabrication.</strong> Those figures belong to <em>embellishment</em>. Invention has its own, mostly smaller, column.</p>
-    <p><strong>"Honest self-promotion is the effective tactic."</strong> The meta-analysis establishing that impression management raises ratings never separates honest from deceptive — its categories are self-focused versus other-focused. No source we have establishes that honesty specifically outperforms.</p>
-    <p><strong>"Faking doesn't work."</strong> Contested and more interesting than that: it has a positive direct effect and a negative indirect one.</p>
-    <p><strong>"Faking destroys interview validity."</strong> One study found academic performance was predicted <em>better</em> in a faking condition; its authors call the simple version "too simplified."</p>
-    <p><strong>"The science, the vendors and the law all abandoned facial analysis."</strong> Three observations with three different scopes, collapsed into one false consensus. Separated on this page.</p>
-    <p><strong>"Structure eliminates bias."</strong> The finding is no detected <em>average</em> difference in <em>ratings</em>, in one evidence set.</p>
-    <p><strong>"AI and video make faking easier."</strong> Three studies point the other way.</p>
-    <p><strong>Recruiters owe candidates a fundamental-rights impact assessment.</strong> They don't — that duty doesn't cover private-sector hiring.</p>
-  </div>
-</details>
-
-<h2><span class="n">Sources</span>All 41, with access status</h2>
-
-<h3>Core library — read in full, verified at page and table level</h3>
-
-<div class="f" style="padding:4px 16px">
-  <div class="srcitem"><span class="t">Sackett, Zhang, Berry &amp; Lievens (2023) — Revisiting the design of selection systems</span><span class="m"><em>Industrial and Organizational Psychology</em> 16:283–300 · <strong>open access, CC-BY</strong> · <a href="https://doi.org/10.1017/iop.2023.24">doi</a></span></div>
-  <div class="srcitem"><span class="t">Levashina, Hartwell, Morgeson &amp; Campion (2014) — The structured employment interview</span><span class="m"><em>Personnel Psychology</em> 67:241–293 · <strong>paywalled</strong> · <a href="https://doi.org/10.1111/peps.12052">doi</a></span></div>
-  <div class="srcitem"><span class="t">Roulin &amp; Bourdage (2017) — Impression management across multiple interviews</span><span class="m"><em>Frontiers in Psychology</em> 8:29 · <strong>open access, CC BY</strong> · <a href="https://doi.org/10.3389/fpsyg.2017.00029">doi</a></span></div>
-  <div class="srcitem"><span class="t">Peck &amp; Levashina (2017) — Impression management meta-analysis</span><span class="m"><em>Frontiers in Psychology</em> 8:201 · <strong>open access, CC BY</strong> · <a href="https://doi.org/10.3389/fpsyg.2017.00201">doi</a></span></div>
-  <div class="srcitem"><span class="t">Schneider, Powell &amp; Bonaccio (2019) — Interview anxiety and job performance</span><span class="m"><em>IJSA</em> 27:328–336 · <strong>open access, CC BY 4.0</strong> · <a href="https://doi.org/10.1111/ijsa.12263">doi</a> · our saved copy is truncated</span></div>
-  <div class="srcitem"><span class="t">Wiseman, Watt, ten Brinke, Porter, Couper &amp; Rankin (2012) — The eyes don't have it</span><span class="m"><em>PLoS ONE</em> 7(7):e40259 · <strong>open access, CC-BY</strong> · <a href="https://doi.org/10.1371/journal.pone.0040259">doi</a></span></div>
-  <div class="srcitem"><span class="t">Moon, Park &amp; Park (2026) — Technology-mediated interviews meta-analysis</span><span class="m"><em>Current Psychology</em> 45:349 · <strong>open access</strong> · <a href="https://doi.org/10.1007/s12144-025-08946-x">doi</a></span></div>
-  <div class="srcitem"><span class="t">Melchers, Petrig, Basch &amp; Sauer (2021) — Conventional vs technology-mediated interviews</span><span class="m"><em>Frontiers in Psychology</em> 11:603632 · <strong>open access</strong> · <a href="https://doi.org/10.3389/fpsyg.2020.603632">doi</a></span></div>
-  <div class="srcitem"><span class="t">Barrett, Adolphs, Marsella, Martinez &amp; Pollak (2019) — Emotional expressions reconsidered</span><span class="m"><em>Psychological Science in the Public Interest</em> 20(1):1–68 · <strong>free to read</strong> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6640856/">PMC6640856</a> · note the November 2019 correction, which we have not read</span></div>
-  <div class="srcitem"><span class="t">Swider, Barrick &amp; Harris (2016) — Initial impressions</span><span class="m"><em>Journal of Applied Psychology</em> 101(5):625–638 · <strong>paywalled</strong> · <a href="https://pubmed.ncbi.nlm.nih.gov/26727208/">PubMed</a> · we have the abstract only</span></div>
-  <div class="srcitem"><span class="t">HireVue — AI in Hirevue Products</span><span class="m">Vendor document, 5 pages, PDF metadata 19 December 2025 · vendor-published</span></div>
-  <div class="srcitem"><span class="t">Regulation (EU) 2024/1689 — Artificial Intelligence Act</span><span class="m">Official Journal · <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng">EUR-Lex</a></span></div>
-  <div class="srcitem"><span class="t">Regulation (EU) 2026/1744 — Digital Omnibus on AI</span><span class="m">Official Journal, 8 July 2026 · <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng">EUR-Lex</a></span></div>
-  <div class="srcitem"><span class="t">Your Europe — Equal treatment at work</span><span class="m">Official EU information portal · <a href="https://europa.eu/youreurope/citizens/work/work-abroad/equal-treatment-with-nationals/index_en.htm">europa.eu</a></span></div>
-  <div class="srcitem"><span class="t">Zielona Linia — Jak przygotować się do rozmowy kwalifikacyjnej</span><span class="m">Polish government careers portal, published 22 December 2025 · <a href="https://zielonalinia.gov.pl/jak-przygotowac-sie-do-rozmowy-kwalifikacyjnej-737/">zielonalinia.gov.pl</a></span></div>
-  <div class="srcitem"><span class="t">Meyer — Culture Map, eight scales</span><span class="m">erinmeyer.com · popular management framework · <span class="chip c-guard">contains no country position data and never mentions Poland or interviews</span></span></div>
-  <div class="srcitem"><span class="t">Evans — CARLA framework</span><span class="m">launchedbylinda.com, 15 November 2023 · career-coaching blog · <span class="chip c-guard">no evidence cited; the author sells coaching</span></span></div>
-  <div class="srcitem"><span class="t">I/O at Work — How structured job interviews can improve hiring success</span><span class="m">Practitioner summary of Levashina et al. 2014 · <span class="chip c-guard">contains two citation errors and no statistics — cite the underlying paper instead</span></span></div>
-</div>
-
-<h3>Recent literature on faking and AI interviews (2018–2026) — verified at abstract level</h3>
-
-<div class="f" style="padding:4px 16px">
-  <div class="srcitem"><span class="t">Melchers, Roulin &amp; Buehl (2020) — A review of applicant faking in selection interviews</span><span class="m"><em>IJSA</em> 28(2):123–142 · <strong>open access, CC-BY</strong> · <a href="https://doi.org/10.1111/ijsa.12280">doi</a> · <em>the best single starting point if you read one thing</em></span></div>
-  <div class="srcitem"><span class="t">Roth, Klehe &amp; Willhardt (2021) — Liar, liar, pants on fire</span><span class="m"><em>Personnel Assessment and Decisions</em> 7(1) · <strong>open access</strong> · <a href="https://doi.org/10.25035/pad.2021.01.007">doi</a></span></div>
-  <div class="srcitem"><span class="t">Charbonneau, Powell, Spence &amp; Lyons (2021) — Unintended consequences of interview faking</span><span class="m"><em>Personnel Assessment and Decisions</em> 7(1) · <strong>open access</strong> · <a href="https://doi.org/10.25035/pad.2021.01.006">doi</a></span></div>
-  <div class="srcitem"><span class="t">Robie, Christiansen, Bourdage, Powell &amp; Roulin (2020) — Nonlinearity in IM and interview performance</span><span class="m"><em>IJSA</em> 28(4):522–530 · paywalled · <a href="https://doi.org/10.1111/ijsa.12307">doi</a></span></div>
-  <div class="srcitem"><span class="t">Hickman, Liff, Willis &amp; Kim (2025) — Can interviewees fake out AI?</span><span class="m"><em>IJSA</em> 33(2) · <strong>open access, CC-BY-NC-ND</strong> · <a href="https://doi.org/10.1111/ijsa.70014">doi</a></span></div>
-  <div class="srcitem"><span class="t">Suen &amp; Hung (2023) — Deception in asynchronous vs synchronous video interviews</span><span class="m"><em>Information Technology &amp; People</em> 38(2):963–983 · <strong>author version open</strong> · <a href="https://osf.io/q7erp">osf.io/q7erp</a></span></div>
-  <div class="srcitem"><span class="t">Langer, König &amp; Hemsing (2020) — Is anybody listening?</span><span class="m"><em>Journal of Managerial Psychology</em> 35(4):271–284 · <strong>green OA</strong> · <a href="https://doi.org/10.1108/jmp-03-2019-0156">doi</a></span></div>
-  <div class="srcitem"><span class="t">Canagasuriam &amp; Lukacik (2024) — ChatGPT, can you take my job interview?</span><span class="m"><em>IJSA</em> 33(1) · <strong>open access, CC-BY-NC-ND</strong> · <a href="https://doi.org/10.1111/ijsa.12491">doi</a></span></div>
-  <div class="srcitem"><span class="t">Bill, Melchers, Steuer &amp; Eisele (2023) — Are traditional interviews more prone to IM effects?</span><span class="m"><em>Applied Psychology</em> 73(3):1309–1330 · <strong>open access, CC-BY</strong> · <a href="https://doi.org/10.1111/apps.12514">doi</a></span></div>
-  <div class="srcitem"><span class="t">Bill &amp; Melchers (2022) — Thou shalt not lie! (faking countermeasures)</span><span class="m"><em>IJSA</em> 31(1):22–44 · <a href="https://doi.org/10.1111/ijsa.12402">doi</a></span></div>
-  <div class="srcitem"><span class="t">Roulin &amp; Powell (2018) — Identifying applicant faking in job interviews</span><span class="m"><em>Journal of Personnel Psychology</em> 17(3):143–154 · paywalled · <a href="https://doi.org/10.1027/1866-5888/a000207">doi</a></span></div>
-  <div class="srcitem"><span class="t">Powell, Bourdage &amp; Bonaccio (2020) — Shake and fake (anxiety and faking)</span><span class="m"><em>Journal of Business and Psychology</em> 36(5):829–840 · <a href="https://doi.org/10.1007/s10869-020-09708-1">doi</a></span></div>
-  <div class="srcitem"><span class="t">Bourdage, Roulin &amp; Tarraf (2018) — Honest and deceptive IM as distinct constructs</span><span class="m"><em>Personnel Psychology</em> 71(4):597–632 · five studies, total N = 1,470 · <a href="https://doi.org/10.1111/peps.12285">doi</a></span></div>
-  <div class="srcitem"><span class="t">Buehl, Melchers, Macan &amp; Kühnel (2018) — Tell me sweet little lies</span><span class="m"><em>Journal of Business and Psychology</em> 34(1):107–124 · <a href="https://doi.org/10.1007/s10869-018-9531-3">doi</a></span></div>
-  <div class="srcitem"><span class="t">Schudlik, Reinhard &amp; Müller (2020) — Prepared to fake?</span><span class="m"><em>IJSA</em> · <a href="https://doi.org/10.1111/ijsa.12317">doi</a></span></div>
-  <div class="srcitem"><span class="t">Bill, Melchers, Buehl &amp; Wank (2020) — Faking prevalence discussion</span><span class="m"><em>Frontiers in Psychology</em> 11:2034 · <strong>open access</strong> · <a href="https://doi.org/10.3389/fpsyg.2020.02034">doi</a></span></div>
-  <div class="srcitem"><span class="t">Hypsová, Seitl, Kubáček &amp; Mimra (2025) — Facial thermal cues and faking</span><span class="m"><em>Scientific Reports</em> 15 · <strong>open access</strong> · N = 27, essentially null</span></div>
-  <div class="srcitem"><span class="t">Agnihotri &amp; Bhattacharya (2025) — Do job candidates fake to AI?</span><span class="m"><em>International Journal of Organizational Analysis</em> · the dissenting finding, on intentions rather than behaviour</span></div>
-</div>
-
-<h3>Added August 2026 — deception detection and cross-cultural self-presentation, verified at abstract level</h3>
-<div class="srclist">
-  <div class="srcitem"><span class="t">Brennen &amp; Magnussen (2023) — Lie Detection: What Works?</span><span class="m"><em>Current Directions in Psychological Science</em> 32(5) · <strong>open access, CC-BY</strong> · <a href="https://doi.org/10.1177/09637214231173095">doi</a></span></div>
-  <div class="srcitem"><span class="t">Verschuere et al. (2023) — The use-the-best heuristic facilitates deception detection</span><span class="m"><em>Nature Human Behaviour</em> 7:718–728 · <a href="https://doi.org/10.1038/s41562-023-01556-2">doi</a> · PMID 36941469</span></div>
-  <div class="srcitem"><span class="t">Levine, Serota &amp; Shulman (2010) — The Impact of Lie to Me on Viewers' Actual Ability to Detect Deception</span><span class="m"><em>Communication Research</em> 37(6) · paywalled · <a href="https://doi.org/10.1177/0093650210362686">doi</a></span></div>
-  <div class="srcitem"><span class="t">Sandal, van de Vijver, Bye et al. (2014) — Intended Self-Presentation Tactics in Job Interviews</span><span class="m"><em>Journal of Cross-Cultural Psychology</em> 45(6) · <strong>Green OA</strong> · <a href="https://doi.org/10.1177/0022022114532353">doi</a></span></div>
-  <div class="srcitem"><span class="t">Bye, Sandal, van de Vijver et al. (2011) — Personal Values and Intended Self-Presentation during Job Interviews</span><span class="m"><em>Applied Psychology</em> 60(1) · <a href="https://doi.org/10.1111/j.1464-0597.2010.00432.x">doi</a> · located via Crossref; abstract not yet read — reference only</span></div>
-</div>
-
-<h2><span class="n">Gaps</span>What this collection is missing</h2>
-
-<p>If you want to go further, these are the sources we most wished we had. All are peer-reviewed and, where noted, freely readable.</p>
-
+</div></section>
+
+<section class="blk" id="s4"><div class="card">
+<h2><span class="no">04</span>What the instrument can't see</h2>
+<p class="sub">The demographic gap that closed · why · personality is barely on the channel</p>
+
+<div class="chart"><svg viewBox="0 0 720 120" role="img" aria-label="Rating gap before and after 1996">
+<text x="0" y="16" class="v">Demographic rating gap (standardized d)</text>
+<line x1="360" y1="30" x2="360" y2="86" stroke="var(--rule)" stroke-width="2"/>
+<text x="0" y="52">pre-1996 (N=5,342)</text><circle cx="460" cy="48" r="9" fill="var(--s2)"/><text x="476" y="53" class="v">d = .20</text>
+<text x="0" y="82">post-1996 (N≈121,000)</text><circle cx="350" cy="78" r="9" fill="var(--s1)"/><text x="270" y="83" class="v">−.02</text>
+<text x="0" y="112" fill="var(--muted)">Race −.01 · gender −.03 · disability −.14 — every CI crosses zero.</text>
+</svg></div>
+
+<details><summary>What closed the gap: a clerical habit <span class="chip c-ok">verified</span></summary><div class="body">
+<p>Not more structure — component counts didn't differ between eras. What differed: post-1996 studies far more often had interviewers <b>score each answer as it was given</b> instead of forming one overall impression at the end (binomial p &lt; .03).</p>
+<div class="callout">A correlate, not a proven cause — the paper's own strongest candidate. And the claim has edges: this is about <b>ratings</b>, in this set of studies. It says nothing about who got invited to interview.</div>
+<p class="src"><span class="chip c-ok">verified</span> Levashina et al. 2014, Table 3 + pp.254–255</p>
+</div></details>
+
+<details><summary>Interviews barely read personality — and a third of questions aim at it <span class="chip c-ok">verified</span></summary><div class="body">
+<p>Interview ratings vs self-reported traits: conscientiousness <b>.12</b>, extraversion .08, openness .03, agreeableness .01, emotional stability <b>.01</b>. Meanwhile one-third of all questions across 47 real interviews targeted personality.</p>
+<p>The honest counterweight: interviewer trait ratings still predict job performance about <b>twice as well</b> as self-reports (.16–.31). Not blind — just far worse than everyone assumes.</p>
+<div class="callout okc">Stop rehearsing adjectives ("I'm hardworking"). Rehearse episodes: what you knew, did, and what happened.</div>
+<p class="src"><span class="chip c-ok">verified</span> Levashina et al. 2014, pp.262, 265</p>
+</div></details>
+</div></section>
+
+<section class="blk" id="s5"><div class="card">
+<h2><span class="no">05</span>Selling yourself, and what faking actually costs</h2>
+<p class="sub">448 real interviews · the modal lie is flattery · two paths · the real price</p>
+
+<div class="chart"><svg viewBox="0 0 720 250" role="img" aria-label="Impression management tactics">
+<text x="0" y="16" class="v">Mean use in 448 real interviews (1–5 scale)</text>
+<text x="0" y="47">Honest self-promotion</text><rect x="205" y="35" width="402" height="15" rx="3" fill="var(--s1)"/><text x="615" y="48" class="v">4.02</text>
+<text x="0" y="77">Honest ingratiation</text><rect x="205" y="65" width="353" height="15" rx="3" fill="var(--s1)" opacity=".7"/><text x="566" y="78" class="v">3.53</text>
+<text x="0" y="107">Insincere flattery</text><rect x="205" y="95" width="299" height="15" rx="3" fill="var(--s2)"/><text x="512" y="108" class="v">2.99</text>
+<text x="0" y="137">Defensive explanations</text><rect x="205" y="125" width="277" height="15" rx="3" fill="var(--s1)" opacity=".45"/><text x="490" y="138" class="v">2.77</text>
+<text x="0" y="167">Embellishment</text><rect x="205" y="155" width="204" height="15" rx="3" fill="var(--s2)" opacity=".7"/><text x="417" y="168" class="v">2.04</text>
+<text x="0" y="197">Hiding negatives</text><rect x="205" y="185" width="154" height="15" rx="3" fill="var(--s2)" opacity=".55"/><text x="367" y="198" class="v">1.54</text>
+<text x="0" y="227">Inventing qualifications</text><rect x="205" y="215" width="138" height="15" rx="3" fill="var(--s2)" opacity=".4"/><text x="351" y="228" class="v">1.38</text>
+</svg></div>
+<p><b>The most common lie in an interview is flattery, not a fabricated credential.</b> Interviewers in this study averaged 174 interviews of career experience; candidates reported anonymously after each real interview.</p>
+
+<details><summary>Consistency is not a tell — the fairytale died in the data <span class="chip c-ok">verified</span></summary><div class="body">
+<p>Across up to fifteen interviews per person, <b>inventing qualifications was the second most stable tactic of seven</b>, nearly matching honest self-promotion. What varied: flattery and defensive explanations. Anyone claiming fabricators "can't keep their story straight" is guessing.</p>
+<p class="src"><span class="chip c-ok">verified</span> Roulin &amp; Bourdage 2017, <i>Frontiers in Psychology</i> 8:29, Tables 2–3 · <a href="https://doi.org/10.3389/fpsyg.2017.00029">doi, CC-BY</a></p>
+</div></details>
+
+<details><summary>Faking pulls the rating both ways at once — net negative <span class="chip c-ok">verified</span></summary><div class="body">
+<p>In 182 videotaped structured interviews, deceptive impression management <b>directly raised</b> interviewer ratings — and simultaneously <b>lowered the answers' plausibility</b> and raised verbal uncertainty, while plausibility itself drives ratings. Two paths, opposite directions. In the largest modern study (693 interviews) the <b>net</b> relation was negative and linear. Honest self-promotion followed an inverted U: helpful, then harmful past a peak nobody has located.</p>
+<p>What not to claim: that faking destroys prediction — one study found prediction survived, its authors call the simple story <i>"too simplified."</i></p>
+<p class="src"><span class="chip c-ok">verified (publisher abstract)</span> Roth, Klehe &amp; Willhardt 2021 · <a href="https://doi.org/10.25035/pad.2021.01.007">doi, diamond OA</a> · <span class="chip c-cited">abstract-level</span> Robie et al. 2020 · <a href="https://doi.org/10.1111/ijsa.12307">doi</a> · Buehl et al. 2018 · <a href="https://doi.org/10.1007/s10869-018-9531-3">doi</a></p>
+</div></details>
+
+<details><summary>The real price: it works, and then you live in it <span class="chip c-ok">verified</span></summary><div class="body">
+<p>206 hired candidates, followed up in two phases: the more deceptive impression management they had used, the <b>worse their person–job and person–organization fit</b> — and fit accounted for lower well-being, lower engagement, and higher job stress. The risk isn't mainly getting caught. <b>The risk is that it works.</b></p>
+<p>And in 202 real interviewees, interview <b>anxiety predicted deceptive impression management</b> — much interview lying is a fear response, not a strategy. Same fix as for nerves.</p>
+<p class="src"><span class="chip c-ok">verified (publisher abstract)</span> Charbonneau, Powell, Spence &amp; Lyons 2021 · <a href="https://doi.org/10.25035/pad.2021.01.006">doi, CC-BY</a> · <span class="chip c-cited">abstract-level</span> Powell, Bourdage &amp; Bonaccio 2020 · <a href="https://doi.org/10.1007/s10869-020-09708-1">doi</a></p>
+</div></details>
+
+<details><summary>Charm needs an audience: .27 on the person in the room, .11 on an observer <span class="chip c-ok">verified</span></summary><div class="body">
+<p>Impression management lifts ratings ≈ .22 overall. When the charmed person also assigns the score: <b>.27</b>. When an outside observer rates the recording: <b>.11, non-significant</b>. Tested mechanism: the engaged interviewer has <b>no spare cognitive capacity</b> to separate charm from content (the "engaged interviewers filter better" hypothesis was rejected). Deliberate detection tops out at <b>63.4%</b> (coin = 50), and warning candidates doesn't reduce faking — it just sours them on the process.</p>
+<p class="src"><span class="chip c-ok">verified</span> Peck &amp; Levashina 2017, Tables 2 &amp; 6 · <a href="https://doi.org/10.3389/fpsyg.2017.00201">doi</a> · <span class="chip c-cited">abstract-level</span> Roulin &amp; Powell 2018 · <a href="https://doi.org/10.1027/1866-5888/a000207">doi</a> · Bill &amp; Melchers 2022 · <a href="https://doi.org/10.1111/ijsa.12402">doi</a></p>
+</div></details>
+
+<details><summary>Three honest gaps nobody will tell you about <span class="chip c-guard">guardrail</span></summary><div class="body">
+<p>The "85–99% of candidates embellish" figure everyone cites is from <b>2007</b>, a student sample, never re-measured — 2020 papers still cite the 2007 source. There is <b>no</b> modern peer-reviewed evidence on how often CV fraud is discovered or what happens afterwards. There is <b>no</b> peer-reviewed estimate of how many candidates use language models in applications. Anyone quoting a number for these three made it up.</p>
+<p class="src"><span class="chip c-ok">verified</span> Bill, Melchers, Buehl &amp; Wank 2020 · <a href="https://doi.org/10.3389/fpsyg.2020.02034">doi, open access</a></p>
+</div></details>
+</div></section>
+
+<section class="blk" id="s6"><div class="card">
+<h2><span class="no">06</span>Building a story that survives probing</h2>
+<p class="sub">No commercial experience needed · six parts · six probes · the uncomfortable finding</p>
+
+<details><summary>No experience, no penalty — the best finding for juniors <span class="chip c-ok">verified</span></summary><div class="body">
+<p><b>Having prior job experience does not change how well behavioural questions predict performance.</b> Candidates substitute non-work experience — the review calls this <i>"common in practice."</i> Volunteer, university, open-source and freelance projects are not second-class answers. And the validity paper classifies "tell me about a time" as a <b>work sample</b>: you're not describing yourself, you're showing a sample of work — which can be prepared honestly.</p>
+<p class="src"><span class="chip c-ok">verified</span> Levashina p.268 (Gibb &amp; Taylor 2003) · Sackett p.288</p>
+</div></details>
+
+<details><summary>Six parts, six probes — and which parts are actually evidence-based <span class="chip c-ok">verified</span></summary><div class="body">
+<p><b>Parts:</b> Context (the constraint that made it hard) · Responsibility (what was yours) · Action · Result (metric, artifact, feedback) · Lesson · Application. Parts 1–4 map onto how these interviews are scored. <b>Parts 5–6 come from a coaching framework with zero validation research</b> — reasonable advice, not evidence, which is why no acronym.</p>
+<p><b>Probes a finished story survives:</b> What did <i>you</i> decide? · What alternative did you reject, and why? · How exactly was the result measured? · What went wrong? · Who disagreed or depended on you? · What artifact exists?</p>
+<div class="callout okc">The one habit: answer at least two probes before being asked. Name the failure yourself. Name the measurement yourself. That's the difference between a 2 and a 3.</div>
+<p>A probe is a scoring signal, not an attack: debriefed applicants said probing <i>"was perceived as a cue signaling what types of answers were important."</i> (Research irony: probing was expected to inhibit faking — it <b>increased</b> it.)</p>
+<p class="src"><span class="chip c-ok">verified</span> Levashina pp.270–273 · CARLA coaching blog, labelled specimen</p>
+</div></details>
+
+<details><summary>More preparation correlates with more faking — kept in on purpose <span class="chip c-cited">abstract-level</span></summary><div class="body">
+<p>Prep time and coaching correlate with more deceptive — and also more honest — impression management. The reading: the same pressure that drives hard preparation drives the urge to close the gap between what you have and what the posting asked. The move: name the gap out loud ("I haven't done this at production scale; here's the closest thing") instead of papering it over. A named gap is a scorable answer.</p>
+<p class="src"><span class="chip c-cited">abstract-level</span> Schudlik, Reinhard &amp; Müller 2020 · <a href="https://doi.org/10.1111/ijsa.12317">doi</a></p>
+</div></details>
+</div></section>
+
+<section class="blk" id="s7"><div class="card">
+<h2><span class="no">07</span>Your nerves are not the signal you think</h2>
+<p class="sub">2.50 = 2.50 · what people actually fear · specificity, not calm</p>
+
+<div class="chart"><svg viewBox="0 0 720 130" role="img" aria-label="Anxiety of hired vs rejected">
+<text x="0" y="16" class="v">Mean interview anxiety — 307 real applicants, ~50% hire rate by design</text>
+<text x="0" y="48">hired (154)</text><rect x="110" y="36" width="450" height="16" rx="3" fill="var(--s1)"/><text x="570" y="49" class="v">2.50</text>
+<text x="0" y="78">rejected (153)</text><rect x="110" y="66" width="450" height="16" rx="3" fill="var(--s2)"/><text x="570" y="79" class="v">2.50</text>
+<text x="0" y="112" fill="var(--muted)">Identical to two decimals (p = .96). And 7.5 months later anxiety didn't predict job performance either (.02–.07, all ns, all 24 correlations ≥ 0).</text>
+</svg></div>
+
+<details><summary>The full study — predictive, real jobs, two rater sources <span class="chip c-ok">verified</span></summary><div class="body">
+<p>All 307 took a structured interview + 30-item anxiety questionnaire; 154 were hired; performance was rated 7.5 months later by supervisors <b>and</b> ~17 supervisees each, on live appraisal forms. The interview itself worked (r = .20 with supervisor ratings) — anxiety just wasn't what it picked up. One honest footnote: for anxious candidates the interview stopped predicting one outcome of four (supervisor-rated teamwork).</p>
+<p><b>What people actually fear:</b> highest of five anxiety dimensions — performance anxiety (fear of the verdict), 2.87. Lowest — communication anxiety (fear of talking), 2.18. People fear the verdict, which can't be rehearsed; they least fear the one thing that can be measurably improved.</p>
+<p class="src"><span class="chip c-ok">verified</span> Schneider, Powell &amp; Bonaccio 2019, <i>IJSA</i> 27(4), §2.1, Table 1 · <a href="https://doi.org/10.1111/ijsa.12263">doi, CC-BY</a></p>
+</div></details>
+
+<details><summary>The mechanism: anxiety eats attention → answers lose detail <span class="chip c-ok">verified</span></summary><div class="body">
+<p>Threat-monitoring consumes the working attention that was building your answer; self-focus cuts disclosure; the measurable output is <b>less detailed answers</b>. So the trainable target is <b>specificity</b>, not calmness. The paper: anxious candidates <i>"may receive lower ratings if they have difficulty articulating a coherent answer in the interview but may communicate clearly once hired."</i></p>
+<p class="src"><span class="chip c-ok">verified</span> Schneider et al. 2019 §1.3 (mechanism: cited theory — Eysenck 2007, Clark &amp; Wells 1995)</p>
+</div></details>
+
+<details><summary>Stop reading your instruments <span class="chip c-ok">verified</span></summary><div class="body">
+<p>Self-rated performance correlated <b>−.46</b> with felt anxiety and <b>−.51</b> with strain — but only ~.39 with what actual raters gave. Your sense of "how it went" measures adrenaline. Heart-rate variability correlated with <b>nothing</b> (max .15); strain peaked during the <b>cognitive test</b>, not the interview.</p>
+<p>First impressions: real, related more strongly to early answers, and the effect <b>fades</b> — so small talk is scored territory, a bad start is recoverable, and "80% in 20 seconds" is dead. (Abstract-only source; that's why no effect size is quoted.)</p>
+<p class="src"><span class="chip c-ok">verified</span> Melchers, Petrig, Basch &amp; Sauer 2021, Tables 1 &amp; 3 · <a href="https://doi.org/10.3389/fpsyg.2020.603632">doi</a> · <span class="chip c-cited">abstract-level</span> Swider, Barrick &amp; Harris 2016 · <a href="https://pubmed.ncbi.nlm.nih.gov/26727208/">PubMed</a></p>
+</div></details>
+</div></section>
+
+<section class="blk" id="s8"><div class="card">
+<h2><span class="no">08</span>Phone, video, and the machine</h2>
+<p class="sub">The video penalty · reps beat brains · what AI actually reads · hardest to fool</p>
+
+<div class="chart"><svg viewBox="0 0 720 160" role="img" aria-label="Faking inflation by scoring channel">
+<text x="0" y="16" class="v">Same people fake the same async interview — inflation d by scoring channel (N=152)</text>
+<text x="0" y="48">Self-report questionnaire</text><rect x="205" y="36" width="403" height="16" rx="3" fill="var(--s2)"/><text x="615" y="49" class="v">.62</text>
+<text x="0" y="78">Human raters</text><rect x="205" y="66" width="143" height="16" rx="3" fill="var(--s1)" opacity=".7"/><text x="355" y="79" class="v">.22</text>
+<text x="0" y="108">AI scoring</text><rect x="205" y="96" width="91" height="16" rx="3" fill="var(--s1)"/><text x="303" y="109" class="v">.14</text>
+<text x="0" y="142" fill="var(--muted)">The machine was hardest to fool: it reads only what you said — no warmth to charm.</text>
+</svg></div>
+
+<details><summary>"No difference" vs "half a standard deviation" — resolved <span class="chip c-ok">verified</span></summary><div class="body">
+<p>A 2026 meta-analysis (24 studies / 31 samples / 3,874 people <b>overall</b>) found no rating difference remote vs in-person: ρ = −.01. Precision matters: the ratings comparison rests on <b>7 samples, 898 people</b>, and the authors write it would be <i>"imprudent to draw any conclusion at this point."</i></p>
+<p>A randomized experiment (N=88, same structured interview): <b>video d = 0.49 below face-to-face</b>; the (now-museum) telephone arm was even worse, d = 0.89 — the thinner the channel, the bigger the penalty. The "contradiction" dissolves in the meta's own coding: it kept only the video arm of that experiment and discarded the telephone arm — the largest effect in the study.</p>
+<p class="src"><span class="chip c-ok">verified</span> Moon, Park &amp; Park 2026, Table 2 · <a href="https://doi.org/10.1007/s12144-025-08946-x">doi, open</a> · Melchers et al. 2021, Table 2 · <a href="https://doi.org/10.3389/fpsyg.2020.603632">doi</a></p>
+</div></details>
+
+<details><summary>What survives: the monologue travels, reps beat brains <span class="chip c-ok">verified</span></summary><div class="body">
+<p>The prepared self-introduction showed <b>no medium effect at all</b> (4.21 / 4.08 / 4.13, F&lt;1) — the interactive questions absorbed the entire penalty. It's not stress: anxiety, strain and heart rate didn't differ between media. So train the <b>interaction</b>, not the pitch.</p>
+<p>And: prior interview count predicted scores (.30/.23/.22) while the 50-item cognitive test predicted <b>nothing significant</b>. The least romantic advice in the library — do more mock interviews — has the strongest support.</p>
+<p>Candidate reactions: organizational attractiveness drops after remote (−.17); intention to pursue drops for <b>asynchronous</b> interviews (−.20) but not live video (+.03) — with async and AI-scored perfectly confounded (identical eight samples), so nobody can yet separate them.</p>
+<p class="src"><span class="chip c-ok">verified</span> Melchers et al. 2021, Tables 1–2 · Moon et al. 2026, Table 2 + p.14</p>
+</div></details>
+
+<details><summary>What an AI interview system actually reads — a vendor's own words <span class="chip c-ok">verified</span></summary><div class="body">
+<p>A major vendor's five-page product document (Dec 2025): your answer is transcribed, the transcript is <i>"processed using LMs,"</i> candidates are <i>"shown in tiers and stack-ranked."</i> A keyword sweep of all five pages: <b>face, facial, visual, video, tone, voice, vocal, expression, emotion, body, gesture, appearance, smile, eye — zero occurrences.</b> Every scored signal is text.</p>
+<p>Sharper still: the model is trained <i>"to predict an expert evaluator's rating"</i> — not job performance. Four criterion substitutions, and <b>no validity coefficient anywhere in the document</b>. The ceiling of such a system is the human rater it imitates. Not an objective instrument — a subjective one, at scale. (Scope: one vendor, one document, one date.)</p>
+<p class="src"><span class="chip c-ok">verified</span> HireVue product document, 5 pp., reproducible keyword sweep</p>
+</div></details>
+
+<details><summary>Machines are harder to fool — the finding nobody guesses <span class="chip c-cited">abstract-level</span></summary><div class="body">
+<p>Inflation by channel (chart above): self-report .62, humans .22, AI <b>.14</b>. A field study of 144 real candidate–interviewer pairs found async video produced <i>less</i> deceptive behaviour than live; merely <i>telling</i> people their answers would be machine-scored reduced deceptive impression management. One dissent measured <i>intentions</i> (not behaviour) rising — unresolved tension, not a contradiction.</p>
+<p>ChatGPT-written answers (preregistered, N=245): higher content scores, unchanged delivery, <b>lower honesty ratings</b> — raters marked something down without naming it — and those candidates rated the process as <i>less fair</i>.</p>
+<p class="src"><span class="chip c-cited">abstract-level</span> Hickman et al. 2025 · <a href="https://doi.org/10.1111/ijsa.70014">doi</a> · Suen &amp; Hung 2023 · <a href="https://doi.org/10.1108/itp-02-2023-0189">doi</a> · Langer et al. 2020 · <a href="https://doi.org/10.1108/jmp-03-2019-0156">doi</a> · Agnihotri &amp; Bhattacharya 2025 · <a href="https://doi.org/10.1108/IJOA-10-2024-4881">doi</a> · Canagasuriam &amp; Lukacik 2024 · <a href="https://doi.org/10.1111/ijsa.12491">doi</a></p>
+</div></details>
+</div></section>
+
+<section class="blk" id="s9"><div class="card">
+<h2><span class="no">09</span>What EU law gives you</h2>
+<p class="sub">Two rights, one date — and what's already in force <span class="chip c-guard">not legal advice</span></p>
+
+<div class="chart"><svg viewBox="0 0 720 110" role="img" aria-label="EU AI Act timeline">
+<line x1="40" y1="55" x2="680" y2="55" stroke="var(--rule)" stroke-width="3"/>
+<circle cx="90" cy="55" r="9" fill="var(--s1)"/><text x="40" y="30" class="v">2 Feb 2025</text><text x="40" y="90">emotion-inference ban (workplace)</text>
+<circle cx="360" cy="55" r="9" fill="var(--s1)" opacity=".65"/><text x="315" y="30" class="v">2 Aug 2026</text><text x="300" y="90">transparency duties</text>
+<circle cx="630" cy="55" r="9" fill="var(--s2)"/><text x="580" y="30" class="v">2 Dec 2027</text><text x="540" y="90">high-risk regime for recruitment AI</text>
+</svg></div>
+
+<details><summary>Right 1: they have to tell you · Right 2: you can ask why <span class="chip c-ok">verified</span></summary><div class="body">
+<p><b>Art 26(11):</b> where a high-risk system makes — or <b>helps make</b> — a decision about a person, the deployer must inform them. A human clicking "accept" on a machine-sorted shortlist does not switch the duty off. Recital 93: the information includes purpose, decision types, and your right to an explanation.</p>
+<p><b>Art 86:</b> the right to <i>"clear and meaningful explanations of the role of the AI system in the decision-making procedure and the main elements of the decision taken."</i> Not the source code — an account of what the machine did and what the decision turned on.</p>
+<p>Recruitment is named high-risk in so many words (Annex III 4(a)), and any system that <b>profiles</b> people is <i>"always considered to be high-risk"</i> (Art 6(3)) — covering essentially every candidate-scoring tool.</p>
+<p class="src"><span class="chip c-ok">verified</span> Reg. (EU) 2024/1689, pp.54, 69, 110, 127 · postponement to 2 Dec 2027: Reg. (EU) 2026/1744, p.35</p>
+</div></details>
+
+<details><summary>The emotion-inference ban — satisfying and deflating <span class="chip c-ok">verified</span></summary><div class="body">
+<p>Since 2 Feb 2025, inferring emotions at the workplace via AI is prohibited (Art 5(1)(f)). The satisfying part: the recital cites <i>"serious concerns about the scientific basis"</i> — naming <i>"the limited reliability, the lack of specificity and the limited generalisability."</i> The law read the same science as section 01. The deflating part: the ban bites only via <b>biometric data</b> (Art 3(39)). A transcript-only pipeline is outside it entirely — which is exactly what the vendor in section 08 runs. Fines for prohibition breaches: up to €35m or 7% of turnover.</p>
+</div></details>
+
+<details><summary>What you have today, no AI required <span class="chip c-ok">verified</span></summary><div class="body">
+<p>EU-wide, public and private sector: discrimination in recruitment is banned on grounds including age, sex, disability, ethnic or racial origin, religion or belief, and sexual orientation. <b>Reasonable accommodation expressly covers the application stage</b> — <i>"from the job application process to termination."</i> Every EU country has a <b>national equality body</b>: it explains, helps you complain, and some will take your case to court with your approval. Remedies: compensation, reinstatement, or an order to fix and accommodate. Asking costs nothing.</p>
+<p class="src"><span class="chip c-ok">verified</span> Your Europe — Equal treatment in recruitment (official EU page)</p>
+</div></details>
+
+<details><summary>Genuinely unsettled <span class="chip c-guard">guardrail</span></summary><div class="body">
+<p>Whether a job interview counts as "the workplace" for the emotion ban — the Act never defines workplace and never mentions applicants in the prohibition. And whether the explanation right has practical bite before Dec 2027 (it applies from Aug 2026, but high-risk classification rules apply 16 months later). The Commission owes guidelines that would settle both. Until then: "unresolved," not a confident answer.</p>
+</div></details>
+</div></section>
+
+<section class="blk" id="s10"><div class="card">
+<h2><span class="no">10</span>Poland</h2>
+<p class="sub">The 26 questions · the trap · six questions to ask them</p>
+
+<div class="chart"><svg viewBox="0 0 720 90" role="img" aria-label="26 Polish interview questions by type">
+<text x="0" y="16" class="v">The 26 most common Polish interview questions, typed</text>
+<rect x="0" y="30" width="106" height="26" rx="4" fill="var(--s1)"/><text x="14" y="48" fill="#fff" font-weight="800">4 behavioural</text>
+<rect x="112" y="30" width="80" height="26" rx="4" fill="var(--s1)" opacity=".55"/><text x="118" y="48" fill="#fff" font-weight="800">3 situat.</text>
+<rect x="198" y="30" width="505" height="26" rx="4" fill="var(--s2)"/><text x="330" y="48" fill="#fff" font-weight="800">19 self-assessment, preferences, opinions</text>
+<text x="0" y="80" fill="var(--muted)">Everything about story-building prepares you for 4 of 26. Pre-decide answers for the other 19.</text>
+</svg></div>
+
+<details><summary>The trap, the frame, and your local rights <span class="chip c-ok">verified</span></summary><div class="body">
+<p><b>The trap:</b> the state careers portal lists "how do you assess your previous boss" as a common question — and lists badmouthing a previous employer as deadly sin #2. Decide your answer in advance.</p>
+<p><b>The frame:</b> two of the portal's three stated employer purposes are <b>verification</b> (documents, CV truth), not prediction. Bring paper copies; expect the CV to be checked against your answers.</p>
+<p><b>Improper questions</b> (the portal's own list): marital status, number of children, maternity plans, sexual orientation, religion; criminal record only where specific provisions allow.</p>
+<p class="src"><span class="chip c-ok">verified</span> zielonalinia.gov.pl, "Rozmowa kwalifikacyjna — jak się przygotować?" — the question typology (4/3/19) is our coding of their list</p>
+</div></details>
+
+<details><summary>Six questions to ask them — plus what the list omits <span class="chip c-ok">verified</span></summary><div class="body">
+<p>Role priorities · onboarding and who owns it · <b>how results are actually assessed</b> · <b>what determines pay and how to earn more</b> · who you'll work with · promotion prospects. Never skip the bold two — the answer tells you whether <i>they</i> know.</p>
+<p>What the list omits, and Poland-critical: <b>contract type</b> (umowa o pracę / zlecenie / B2B), probation, working time, remote policy, notice period. <span class="chip c-craft">inference</span> — our addendum.</p>
+</div></details>
+</div></section>
+
+<section class="blk" id="s10b"><div class="card">
+<h2><span class="no">10B</span>The instrument was built in America. You weren't.</h2>
+<p class="sub">Modesty reads as missing data · what cross-cultural research actually says</p>
+
+<details><summary>The mismatch, stated mechanically <span class="chip c-craft">inference</span></summary><div class="body">
+<p>The scoring rubric wants <b>personal action</b>: a 2 requires "clear personal action and an observable result." A candidate raised on "we did it" etiquette — where naming your own contribution feels like boasting, and where the Polish portal literally lists "don't boast" among its commandments — answers collectively, and the rubric has nothing to attach a score to. <b>Modesty doesn't read as modesty through this instrument. It reads as missing data.</b> (The mechanics are verified; this cultural consequence is our inference, labelled.)</p>
+</div></details>
+
+<details><summary>The 10-country study — folk wisdom loses again <span class="chip c-cited">abstract-level</span></summary><div class="body">
+<p>N = 3,509 across 10 countries, Russia included: cultures differ in which self-presentation tactics candidates endorse — most on <b>"individual excellence"</b> — and self-presentation carried <i>more</i> weight in hierarchical, high-embeddedness cultures, with the <b>American sample as the exception</b>. So "post-Soviet candidates undersell, Americans oversell" is folklore too; what differs is which tactics feel appropriate.</p>
+<div class="callout"><b>Honest gap:</b> no study measures how CIS-raised candidates actually score in Western-style interviews. We claim the mechanism and the documented differences — not a penalty coefficient nobody has published.</div>
+<p class="src"><span class="chip c-cited">abstract-level</span> Sandal, van de Vijver, Bye et al. 2014, <i>JCCP</i> 45(6) · <a href="https://doi.org/10.1177/0022022114532353">doi, Green OA</a> · companion: Bye et al. 2011 · <a href="https://doi.org/10.1111/j.1464-0597.2010.00432.x">doi</a></p>
+</div></details>
+
+<details><summary>The translation layer — three rules, no personality transplant <span class="chip c-craft">practice</span></summary><div class="body">
+<p><b>1. "I" for actions, "we" for credit.</b> "The team shipped the migration — my part was the schema validation and the cutover plan." That sentence structure is the entire skill.</p>
+<p><b>2. Precision instead of praise.</b> You never have to say you're excellent — numbers and artifacts are culturally neutral; adjectives aren't.</p>
+<p><b>3. Name the register switch.</b> "In my professional culture we credit the team, so let me be specific about my own part" — itself a demonstration of self-awareness.</p>
+</div></details>
+</div></section>
+
+<section class="blk" id="quiz"><div class="card">
+<h2>🧠 Self-test: the 17 quiz questions</h2>
+<p class="sub">The same hard-mode questions from the meetup. Click an answer — the reveal explains. Счёт ведётся сам.</p>
+<div id="score" class="callout okc" style="display:none"></div>
+<div id="quizbox"></div>
+</div></section>
+
+<section class="blk" id="integrity"><div class="card">
+<h2>What we could not verify — and what we got wrong</h2>
+<p class="sub">Kept deliberately. Better you have the gaps than a clean story.</p>
+<details><summary>Marked unverifiable (selection of 17)</summary><div class="body">
 <ul>
-  <li><strong>Bond &amp; DePaulo (2006), "Accuracy of deception judgments"</strong> — the canonical meta-analysis showing humans detect deception at roughly 54%. The general version of the argument in Section 1.</li>
-  <li><strong>Global Deception Research Team (2006), "A world of lies"</strong> — documents that "liars avert gaze" is the most widespread belief about lying across 75 countries. Freely available via PMC. The perfect companion to the eye-movement study: belief universal, cue invalid.</li>
-  <li><strong>Roulin, Bangerter &amp; Levashina (2015)</strong> — the study establishing that interviewers cannot reliably distinguish honest from deceptive impression management. This is the load-bearing citation for our entire detection argument and we could not obtain it.</li>
-  <li><strong>Levashina &amp; Campion (2007)</strong>, <em>Journal of Applied Psychology</em> 92(6) — the origin of the 85–99% prevalence figure and of the faking measure the whole field uses.</li>
-  <li><strong>Powell, Stanley &amp; Brown (2018)</strong> — the meta-analysis behind the <code>r = −.19</code> anxiety figure.</li>
-  <li><strong>Polish Labour Code art. 22¹</strong>, via the official ISAP database — the actual legal basis for what an employer may demand from a candidate in Poland. The government careers page paraphrases it without citing it.</li>
-  <li><strong>Any independent (non-vendor) empirical study of AI interview scoring validity.</strong> As far as we can establish, no such figure exists in the accessible literature.</li>
+<li>The four experiments behind "90% accuracy" — referenced in 1987, never found.</li>
+<li>The 85–99% embellishment rate — one 2007 student sample, never re-measured.</li>
+<li>Base rates and consequences of CV fraud — no post-2017 peer-reviewed evidence.</li>
+<li>Prevalence of LLM use in real applications — no peer-reviewed estimate exists.</li>
+<li>Swider et al. 2016 (first impressions) — abstract only; effect sizes not quoted anywhere in our materials.</li>
+<li>Ho, Powell &amp; Stanley 2021 — a meta-analysis on our exact question, closed access; acknowledged, carries no numbers here.</li>
+<li>Powell, Stanley &amp; Brown 2018 (anxiety↔performance r = −.19) — cited inside a source, original not in the library.</li>
+<li>Suen &amp; Hung 2024 figures — a 2025 corrigendum we have not read; quarantined.</li>
+<li>Polish Labour Code article numbers — deliberately excluded until verified.</li>
+<li>Whether a job interview is "the workplace" under Art 5(1)(f) — unresolved in the legal texts themselves.</li>
 </ul>
+</div></details>
+<details><summary>Corrections we made to our own drafts (selection of 9)</summary><div class="body">
+<ul>
+<li>"Fabrication is inconsistent between interviews" — <b>flatly contradicted</b> by the data; removed and guarded.</li>
+<li>"31 samples / 3,874 people → ρ = −.01" — conflated the whole meta with its ratings subset (7 samples / 898); fixed everywhere.</li>
+<li>The EU emotion ban read as covering all AI interview scoring — it bites only via biometric data; transcript pipelines are outside it.</li>
+<li>Async vs AI-scored presented as two findings — they are the identical eight samples; presented as one confounded finding.</li>
+<li>An early draft implied observer raters are "objective" — the effect merely didn't reach significance in a smaller sample.</li>
+</ul>
+</div></details>
+</div></section>
 
-<footer>
-  Companion page for an interview-preparation meetup · compiled from 36 sources · 207 catalogued findings<br>
-  Core sources verified at page and table level. Sources marked <em>abstract-level</em> were verified from published abstracts; several publishers blocked full text. Quotations are short and attributed; long-form reproduction of paywalled material has been avoided deliberately.<br>
-  Corrections welcome — if a number here doesn't match the source, that is a bug and we want to know.
-</footer>
-
+<section class="blk" id="sources"><div class="card">
+<h2>All 41 sources, with access status</h2>
+<div class="srcbar">
+<button class="on" data-f="all">All 41</button>
+<button data-f="core">Core 18 (page-level)</button>
+<button data-f="new">Newer 23 (abstract-level)</button>
+<button data-f="oa">Open access 26</button>
+<input id="srcq" placeholder="Поиск по автору, году, теме…">
 </div>
+<div id="srclist"></div>
+</div></section>
+
+<div class="foot">Companion page for a Russian-language interview-evidence meetup · built from 41 sources, 207 coded findings, and an honest list of what we couldn't verify · <a href="https://github.com/kiryllahun-inno/interview-evidence">repository</a></div>
+</main>
+</div>
+
+<script>
+/* ---------- quiz ---------- */
+const QUIZ=[
+["🕵️ В 52 настоящих обращениях — чем 26 лжецов отличались от честных родственников?",["Больше взглядов вверх-вправо, длиннее паузы","Меньше слов, короче обращения, чаще моргали","Больше касаний лица, чаще отводили взгляд","Отличий в поведении не нашли вовсе"],1,"Отличались — но ничем из фольклора: меньше слов, больше хеджей, чаще моргали, на 41% короче."],
+["🎓 Обучение правилу «взгляд вверх-вправо = ложь» сделало точность людей…",["Чуть хуже, уверенность не изменилась","Чуть лучше, уверенность не изменилась","Той же, но уверенность выросла","Значимо лучше"],0,"16.33 против 16.59 у необученных — и изнутри это даже не ощущалось как провал."],
+["📺 Зрители Lie to Me по сравнению с контрольной группой…",["Менее точны, больше ложных обвинений честных","Более точны, меньше ложных обвинений","Так же точны, но больше ложных обвинений честных","Так же точны, так же подозрительны"],2,"Точность не сдвинулась — сдвинулась подозрительность."],
+["🧩 Судьи, свободно использовавшие ВСЕ признаки (9 исследований), показали результат…",["Чуть выше случайности","Заметно выше случайности","На уровне случайности","Ниже случайности"],2,"Свободная интуиция = монетка; группа с одним признаком (детальность) её победила."],
+["📏 Актуальная пара валидностей:",["Structured .51 · IQ .31","Structured .42 · IQ .51","Structured .31 · IQ .42","Structured .42 · IQ .31"],3,".51 — это учебник до 2022 года; поправка убила именно это число."],
+["📈 После поправки 2022 года какая оценка ВЫРОСЛА?",["Биографические данные (biodata)","IQ-тесты","Work samples","Никакая — всё упало"],0,".35 → .38. Метод, который бы только сдувал, был бы подозрителен по-своему."],
+["🔍 До/после 1996 — когда закрылся демографический разрыв — что НЕ различалось?",["Привычка, когда ставить оценку","Размер разрыва","Число компонентов структуры","Доля полевых исследований"],2,"Структуры было столько же — изменилась привычка оценивать каждый ответ сразу."],
+["🧠 Оценка личности интервьюером предсказывает работу — против самоотчёта…",["Примерно так же","Примерно вдвое хуже","Примерно вдвое лучше","Примерно вчетверо лучше"],2,"Интервьюеры читают людей плохо — но всё же вдвое лучше, чем люди описывают себя сами."],
+["🎭 Из семи тактик в 448 настоящих интервью неискренняя лесть была…",["Первой по частоте","Пятой по частоте","Седьмой по частоте","Третьей по частоте"],3,"Выше некоторых честных тактик — модальная ложь это «I love your company»."],
+["🔁 Самая стабильная тактика между интервью — честная самопрезентация. А вторая?",["Неискренняя лесть","Выдумывание квалификаций","Сокрытие негатива","Оправдания"],1,"Фабрикаторы не плавают. Последовательность — не признак."],
+["📉 В 693 интервью верная пара:",["Честная: перевёрнутая U · обманная: линейно вниз","Честная: линейно вверх · обманная: перевёрнутая U","Честная: перевёрнутая U · обманная: линейно вверх","Честная: линейно вниз · обманная: перевёрнутая U"],0,"Продавать себя помогает до предела; обман тянет вниз по всей длине."],
+["😰 Все 24 корреляции «тревога ↔ работа» (307 кандидатов) были…",["Ноль или чуть ниже нуля","Стабильно отрицательные","Поровну в обе стороны","Ноль или чуть выше нуля"],3,"Предсказанная негативная связь даже не смотрела в нужную сторону."],
+["🎥 Между живым интервью, телефоном и видео замеры стресса показали…",["Больше тревоги только на видео","Больше напряжения только на телефоне","Выше пульс на живом интервью","Никаких различий нигде"],3,"Штраф видео — не стрессовый эффект: труднее само взаимодействие."],
+["🏋️ Балл интервью предсказывался числом прошлых интервью, но НЕ…",["Тестом когнитивных способностей","Специальностью обучения","Самооценкой подготовки","Баллом экстраверсии"],0,"Reps beat brains: практика предсказывала баллы, интеллект — нет."],
+["🤖 Те же люди фейковали то же async-интервью. Инфляция, от большей к меньшей:",["AI → люди → self-report","Self-report → люди → AI","Люди → self-report → AI","Self-report → AI → люди"],1,".62 → .22 → .14 — машину обмануть оказалось труднее всех."],
+["📄 Пятистраничный документ вендора об AI в найме. Какое слово в нём ЕСТЬ?",["Face","Emotion","Transcript","Voice"],2,"Четырнадцать визуально-голосовых слов — ноль вхождений. Машина читает текст."],
+["⚖️ Запрет ЕС на распознавание эмоций на работе действует только для данных…",["Любых персональных","Биометрических","Только видеозаписей","Особых категорий"],1,"Транскрипт-пайплайн полностью вне запрета — ровно то, что делают вендоры."]];
+let answered=0,correct=0;
+const qb=document.getElementById('quizbox');
+QUIZ.forEach((q,qi)=>{
+  const d=document.createElement('div');d.className='qq';
+  d.innerHTML='<div class="qt">'+(qi+1)+'. '+q[0]+'</div>'+
+    q[1].map((o,i)=>'<button data-i="'+i+'">'+o+'</button>').join('')+
+    '<div class="reveal">💡 '+q[3]+'</div>';
+  d.querySelectorAll('button').forEach(b=>b.onclick=()=>{
+    if(d.classList.contains('done'))return;
+    d.classList.add('done');answered++;
+    const i=+b.dataset.i;
+    d.querySelectorAll('button')[q[2]].classList.add('right');
+    if(i===q[2]){correct++}else{b.classList.add('wrong')}
+    const s=document.getElementById('score');
+    s.style.display='block';
+    s.innerHTML='<b>Счёт: '+correct+' из '+answered+'</b>'+(answered===QUIZ.length?(correct>=13?' — 🏆 ты слушал(а) лучше всех в зале!':correct>=9?' — 💪 солидно, верх таблицы.':' — 📖 страница выше ждёт тебя.'):'');
+  });
+  qb.appendChild(d);
+});
+/* ---------- sources ---------- */
+const SRC=[
+["Sackett, Zhang, Berry & Lievens (2023) — Revisiting the design of selection systems","IOP 16:283–300 · open access CC-BY","https://doi.org/10.1017/iop.2023.24","core oa"],
+["Levashina, Hartwell, Morgeson & Campion (2014) — The structured employment interview","Personnel Psychology 67:241–293 · paywalled","https://doi.org/10.1111/peps.12052","core"],
+["Roulin & Bourdage (2017) — Once an impression manager, always an impression manager?","Frontiers in Psychology 8:29 · open access CC-BY","https://doi.org/10.3389/fpsyg.2017.00029","core oa"],
+["Peck & Levashina (2017) — Impression management and interview & job performance ratings","Frontiers in Psychology 8:201 · open access","https://doi.org/10.3389/fpsyg.2017.00201","core oa"],
+["Schneider, Powell & Bonaccio (2019) — Interview anxiety and job performance","IJSA 27(4):328–336 · open access CC-BY","https://doi.org/10.1111/ijsa.12263","core oa"],
+["Wiseman, Watt, ten Brinke, Porter, Couper & Rankin (2012) — The Eyes Don't Have It","PLoS ONE 7(7) · open access","https://doi.org/10.1371/journal.pone.0040259","core oa"],
+["Moon, Park & Park (2026) — Technology-mediated interviews meta-analysis","Current Psychology 45:349 · open access","https://doi.org/10.1007/s12144-025-08946-x","core oa"],
+["Melchers, Petrig, Basch & Sauer (2021) — Conventional vs technology-mediated interviews","Frontiers in Psychology 11:603632 · open access","https://doi.org/10.3389/fpsyg.2020.603632","core oa"],
+["Barrett, Adolphs, Marsella, Martinez & Pollak (2019) — Emotional Expressions Reconsidered","PSPI 20(1):1–68 · open access","https://doi.org/10.1177/1529100619832930","core oa"],
+["HireVue product document — AI in HireVue (Dec 2025)","vendor primary document, 5 pp.","","core"],
+["Regulation (EU) 2024/1689 — the AI Act","EUR-Lex, official text","https://eur-lex.europa.eu/eli/reg/2024/1689/oj","core oa"],
+["Regulation (EU) 2026/1744 — the Digital Omnibus","EUR-Lex, official text","","core oa"],
+["The Culture Map (Meyer) — eight scales page","practitioner framework · vocabulary only","","core"],
+["CARLA framework blog post","commercial coaching blog · labelled specimen","","core"],
+["Your Europe — Equal treatment in recruitment","official EU page","","core oa"],
+["zielonalinia.gov.pl — Rozmowa kwalifikacyjna & 26 questions","Polish state careers portal","https://zielonalinia.gov.pl/jak-przygotowac-sie-do-rozmowy-kwalifikacyjnej-737/","core oa"],
+["Swider, Barrick & Harris (2016) — Initial impressions","JAP 101(5) · paywalled · abstract only","https://pubmed.ncbi.nlm.nih.gov/26727208/","core"],
+["Structured interviews practical summary","practitioner page","","core"],
+["Robie, Christiansen, Bourdage, Powell & Roulin (2020) — honest IM inverted-U, deceptive linear negative","IJSA 28(4):522–530 · closed","https://doi.org/10.1111/ijsa.12307","new"],
+["Roth, Klehe & Willhardt (2021) — Liar, Liar, Pants on Fire (plausibility mechanism)","PAD 7(1) art.7 · diamond OA","https://doi.org/10.25035/pad.2021.01.007","new oa"],
+["Charbonneau, Powell, Spence & Lyons (2021) — Unintended consequences of interview faking","PAD 7(1) art.6 · CC-BY","https://doi.org/10.25035/pad.2021.01.006","new oa"],
+["Powell, Bourdage & Bonaccio (2020) — anxiety → deceptive IM","JBP 36(5):829–840 · hybrid","https://doi.org/10.1007/s10869-020-09708-1","new"],
+["Roulin & Powell (2018) — detection ceiling 63.4%","J. Personnel Psychology 17(3) · closed","https://doi.org/10.1027/1866-5888/a000207","new"],
+["Bill & Melchers (2022) — warnings don't reduce faking","IJSA 31(1):22–44 · hybrid","https://doi.org/10.1111/ijsa.12402","new"],
+["Schudlik, Reinhard & Müller (2020) — Prepared to fake?","IJSA · hybrid","https://doi.org/10.1111/ijsa.12317","new"],
+["Bill, Melchers, Steuer & Eisele (2023) — traditional questions inflate more","Applied Psychology 73(3) · CC-BY","https://doi.org/10.1111/apps.12514","new oa"],
+["Buehl, Melchers, Macan & Kühnel (2018) — 'faking destroys validity' is too simplified","JBP 34(1):107–124 · closed","https://doi.org/10.1007/s10869-018-9531-3","new"],
+["Bill, Melchers, Buehl & Wank (2020) — the 85–99% figure is still the 2007 source","Front. Psychol. 11:2034 · gold OA","https://doi.org/10.3389/fpsyg.2020.02034","new oa"],
+["Hickman, Liff, Willis & Kim (2025) — machine hardest to fool (d = .62/.22/.14)","IJSA 33(2) · CC-BY-NC-ND","https://doi.org/10.1111/ijsa.70014","new oa"],
+["Suen & Hung (2023) — async video elicited fewer deceptive behaviours","IT & People 38(2) · green OA","https://doi.org/10.1108/itp-02-2023-0189","new oa"],
+["Langer, König & Hemsing (2020) — automated evaluation → less deceptive IM","JMP 35(4):271–284 · green OA","https://doi.org/10.1108/jmp-03-2019-0156","new oa"],
+["Agnihotri & Bhattacharya (2025) — AI raises faking intentions (the dissent)","IJOA · closed","https://doi.org/10.1108/IJOA-10-2024-4881","new"],
+["Canagasuriam & Lukacik (2024) — ChatGPT, can you take my job interview?","IJSA 33(1) · CC-BY-NC-ND · N=245 preregistered","https://doi.org/10.1111/ijsa.12491","new oa"],
+["Melchers, Roulin & Buehl (2020) — review of applicant faking (best single read)","IJSA 28(2):123–142 · CC-BY","https://doi.org/10.1111/ijsa.12280","new oa"],
+["Ho, Powell & Stanley (2021) — acknowledged only; no statistic verified","CJBS 53(2) · closed","https://doi.org/10.1037/cbs0000223","new"],
+["Hypsová, Seitl, Kubáček & Mimra (2025) — facial thermal cues (N=27, essentially null)","Scientific Reports 15 · open access","","new oa"],
+["Brennen & Magnussen (2023) — Lie Detection: What Works?","CDPS 32(5) · CC-BY","https://doi.org/10.1177/09637214231173095","new oa"],
+["Verschuere et al. (2023) — the use-the-best heuristic","Nature Human Behaviour 7:718–728","https://doi.org/10.1038/s41562-023-01556-2","new"],
+["Levine, Serota & Shulman (2010) — The Impact of Lie to Me","Communication Research 37(6) · paywalled","https://doi.org/10.1177/0093650210362686","new"],
+["Sandal, van de Vijver, Bye et al. (2014) — Intended self-presentation in 10 countries","JCCP 45(6) · green OA","https://doi.org/10.1177/0022022114532353","new oa"],
+["Bye, Sandal, van de Vijver et al. (2011) — personal values & intended self-presentation","Applied Psychology 60(1) · reference only","https://doi.org/10.1111/j.1464-0597.2010.00432.x","new"]];
+const list=document.getElementById('srclist');
+function renderSrc(f,q){
+  list.innerHTML='';q=(q||'').toLowerCase();
+  SRC.forEach(s=>{
+    const tags=s[3];
+    if(f==='core'&&!tags.includes('core'))return;
+    if(f==='new'&&!tags.includes('new'))return;
+    if(f==='oa'&&!tags.includes('oa'))return;
+    if(q&&!(s[0]+' '+s[1]).toLowerCase().includes(q))return;
+    const d=document.createElement('div');d.className='srcitem';
+    d.innerHTML='<b>'+s[0]+'</b><span class="m">'+s[1]+(s[2]?' · <a href="'+s[2]+'">link</a>':'')+'</span>';
+    list.appendChild(d);
+  });
+  if(!list.children.length)list.innerHTML='<p class="src">Ничего не нашлось.</p>';
+}
+let curF='all';
+document.querySelectorAll('.srcbar button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.srcbar button').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');curF=b.dataset.f;renderSrc(curF,document.getElementById('srcq').value);
+});
+document.getElementById('srcq').oninput=e=>renderSrc(curF,e.target.value);
+renderSrc('all','');
+/* ---------- demo vote ---------- */
+function vote(x){
+  document.getElementById('v'+x).classList.add('sel');
+  document.getElementById('scale').classList.remove('hid');
+}
+/* ---------- toc scrollspy ---------- */
+const links=[...document.querySelectorAll('#toc a')];
+const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+addEventListener('scroll',()=>{
+  let i=secs.findLastIndex(s=>s&&s.getBoundingClientRect().top<120);
+  links.forEach((a,j)=>a.classList.toggle('on',j===i));
+},{passive:true});
+/* ---------- expand/collapse all ---------- */
+function toggleAll(open){document.querySelectorAll('details').forEach(d=>d.open=open)}
+</script>
+</body>
+</html>
